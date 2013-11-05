@@ -1,0 +1,14 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1367328645000 397 dbf765d8d77f02c119fdc77e0ed34c2263c3dfd5 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$attr.class
+1367328645000 464 43b1fef13b24618e41f8e4a414929a6796092e18 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$drawable.class
+1367328645000 460 1ded64043d4456959fba167bea54b3e83a0d4f97 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$layout.class
+1367328645000 488 e1b8c5b280202fabd24957a3064030a4e5f6b4da /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$style.class
+1367328645000 529 d411d59e1d45989072a90528ce62bead53e484e2 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$string.class
+1367328645000 867 fb6ac09e090f3a577d6336b22f130837596d9f92 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R.class
+1367328645000 855 d694972e1f3d3ccc1a5862b8cab91e6ed4e03839 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/MainActivity.class
+1367328645000 450 77310bbf607e991f6a5c26473322fde3a6d43eb2 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$id.class
+1367328645000 445 7817176e1e9b1ac2a308131455e5cae45ce5e437 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$menu.class
+1367328645000 518 9a97fb3f4309bc5e1ef850fba19c2d5710810969 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/R$dimen.class
+1367328645000 383 834397121154a55355f9db5c27c286aff2f583d8 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/classes/debug/com/vogella/android/build/firstgradle/BuildConfig.class

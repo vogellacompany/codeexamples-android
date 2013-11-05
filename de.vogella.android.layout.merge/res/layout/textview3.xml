@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content" android:id="@+id/textView3"
+		android:layout_height="wrap_content" android:text="First name"></TextView>
+	<TextView android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content" android:id="@+id/textView3"
+		android:layout_height="wrap_content" android:text="Last name"></TextView>
+	<TextView android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content" android:id="@+id/textView3"
+		android:layout_height="wrap_content" android:text="Helpful"></TextView>
+</merge>

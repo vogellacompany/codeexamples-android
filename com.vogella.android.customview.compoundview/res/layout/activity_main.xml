@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res/com.vogella.android.view.compoundview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="?android:attr/listDivider"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    tools:context=".MainActivity" >
+
+    <com.vogella.android.customview.compoundview.ColorOptionsView
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClicked"
+        custom:titleText="Background color"
+        custom:valueColor="@android:color/holo_green_light" />
+
+    <com.vogella.android.customview.compoundview.ColorOptionsView
+        android:id="@+id/view2"
+        
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClicked"
+        custom:titleText="Foreground color"
+        custom:valueColor="@android:color/holo_orange_dark" />
+
+</LinearLayout>

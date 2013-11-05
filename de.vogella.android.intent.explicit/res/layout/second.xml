@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alignmentMode="alignBounds"
+    android:columnCount="2"
+    android:columnOrderPreserved="false"
+    android:useDefaultMargins="true" >
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Input 1"
+        android:textSize="32dip" />
+
+    <EditText
+        android:id="@+id/input1"
+        android:layout_gravity="fill_horizontal"
+        android:text="Default" />
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Input 2"
+        android:textSize="32dip" />
+
+    <EditText
+        android:id="@+id/input2"
+        android:layout_gravity="fill_horizontal"
+        android:text="Default" />
+
+ 
+    <Button
+        android:layout_column="1"
+        android:layout_gravity="right"
+        android:width="80dp"
+        android:onClick="onClick"
+        android:text="Finish" />
+
+</GridLayout>

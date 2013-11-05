@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="6dip"
+    android:background="@drawable/customshape"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/twitteruser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dip"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Twitter ID"
+        android:textColor="@color/white"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/followers"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_weight="10"
+        android:text="Follower"
+        android:textColor="@color/white"
+        android:textSize="24dip"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="8dip"
+        android:text="Last updated"
+        android:textColor="@color/white" >
+    </TextView>
+
+</LinearLayout>

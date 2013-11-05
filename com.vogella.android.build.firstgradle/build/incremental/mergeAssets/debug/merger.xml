@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/src/debug/assets" />
+    </dataSet>
+
+</merger>

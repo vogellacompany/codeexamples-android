@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout android:id="@+id/LinearLayout01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></LinearLayout>
+	<EditText android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:id="@+id/address"></EditText>
+	<Button android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Read Webpage"
+		android:id="@+id/ReadWebPage" android:onClick="myClickHandler"></Button>
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:id="@+id/pagetext"
+		android:scrollbars="vertical"></TextView>
+</LinearLayout>
+

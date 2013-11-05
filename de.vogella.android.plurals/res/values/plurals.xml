@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals
+        name="tutorials">
+        <item quantity="zero">zero Tutorials </item>
+        <item quantity="one">one Tutorial </item>
+        <item quantity="two">more then one but less then three Tutorial </item>
+        <item quantity="other">%d  Tutorials</item>
+    </plurals>
+</resources>

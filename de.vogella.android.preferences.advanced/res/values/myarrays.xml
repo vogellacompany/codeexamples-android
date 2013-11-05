@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="myarray1">
+        <item>test1</item>
+        <item>test2</item>
+    </string-array>
+    <string-array name="myarray2">
+        <item>result1</item>
+        <item>result2</item>
+    </string-array>
+    
+</resources>

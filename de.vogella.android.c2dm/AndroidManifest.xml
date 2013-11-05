@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="de.vogella.android.c2dm" android:versionCode="1"
+	android:versionName="1.0">
+	<permission android:name="de.vogella.android.c2dm.permission.C2D_MESSAGE"
+		android:protectionLevel="signature" />
+	<uses-permission android:name="de.vogella.android.c2dm.permission.C2D_MESSAGE" />
+	<!-- Permissions -->
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+		<activity android:name="RegisterActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<service android:name=".C2DMReceiver" />
+
+
+		<!-- Only C2DM servers can send messages for the app. If permission is 
+			not set - any other app can generate it -->
+		<receiver android:name="com.google.android.c2dm.C2DMBroadcastReceiver"
+			android:permission="com.google.android.c2dm.permission.SEND">
+			<!-- Receive the actual message -->
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="de.vogella.android.c2dm" />
+			</intent-filter>
+			<!-- Receive the registration id -->
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<category android:name="de.vogella.android.c2dm" />
+			</intent-filter>
+		</receiver>
+		<activity android:name="ResultActivity"></activity>
+	</application>
+</manifest>

@@ -1,0 +1,16 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1367326794000 268 ab78ebcb558acb53931d52983ff984bc7fc2f2a5 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values-sw720dp-land/dimens.xml
+1367326794000 212 021b1a1fac58555318981ab3bfa4509ca377403c /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values/dimens.xml
+1367326794000 380 12f23f4d1d8caf39afb3dd1ea06c85ab0bb947a2 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values-v14/styles.xml
+1367326794000 3777 f8cbe1b82ece1fbd3ca3693a0f6ebc75c3358ec2 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/drawable-mdpi/ic_launcher.png
+1367326794000 24777 83ded14cdff196da97a2e0fa16d9415228191fa7 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/drawable-xxhdpi/ic_launcher.png
+1367326794000 12516 98b66fdda8255fcf8ded6b705517aa48216218d6 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/drawable-xhdpi/ic_launcher.png
+1367326794000 649 6626e1353d661023c9072803ed07545a9a724c16 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/layout/activity_main.xml
+1367326794000 323 c9faf42f74791e8fbea4824b03aa1e433dff52a5 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values-v11/styles.xml
+1367326794000 7658 8fcbd6375e2dd1996cedaaf7e3a8950364b886a0 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/drawable-hdpi/ic_launcher.png
+1367326794000 195 041a64de5a8eaf2b1e5e0dc5595866b4da106f2b /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values-sw600dp/dimens.xml
+1367326794000 253 ec4baedf4e33e5dd41ea7e021286cd2089775c4a /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/menu/main.xml
+1367326794000 679 80ff9b6340911dc95d8c08dc6621813e386bec42 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values/styles.xml
+1367326794000 214 4aab92aedf62069878819a210b9add27380de8e5 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/res/values/strings.xml

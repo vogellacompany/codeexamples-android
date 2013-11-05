@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.vogella.android.c2dm.simpleclient"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <permission
+        android:name="de.vogella.android.c2dm.simpleclient.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="de.vogella.android.c2dm.simpleclient.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:label="@string/app_name"
+            android:name=".C2DMClientActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".C2DMRegistrationReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter >
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" >
+                </action>
+
+                <category android:name="de.vogella.android.c2dm.simpleclient" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".C2DMMessageReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter >
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" >
+                </action>
+
+                <category android:name="de.vogella.android.c2dm.simpleclient" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:launchMode="singleTop"
+            android:name="RegistrationResultActivity" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name="MessageReceivedActivity" >
+        </activity>
+    </application>
+
+</manifest>

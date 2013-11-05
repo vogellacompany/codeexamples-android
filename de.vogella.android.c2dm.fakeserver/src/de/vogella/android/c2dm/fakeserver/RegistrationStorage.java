@@ -1,0 +1,5 @@
+package de.vogella.android.c2dm.fakeserver;
+
+public class RegistrationStorage {
+	public static final String REGISTRATION_ID = "APA91bFSyztrT8RzkwX4cvXI6ABio6jHbcmnGBe_jjaT1GfNWbiojIotMzxEY_TEJMrpEPDxyKlzNUJYqQkOjtQ38Pho4YqeUv4YJxBkowJ0yHW82mYAF-IKCRMVd_bDEfddoWiIvZSWLkj4JyiZ5DZKrJ-H4e8mbcN7zbpxzen8gYSJUw51q8Y";
+}

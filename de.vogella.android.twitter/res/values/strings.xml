@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MyTwitter!</string>
+    <string name="app_name">Twitter</string>
+<string name="labelWhatsHappening">What\'s Happening?</string>
+<string name="hintStatus">Enter 140 characters status update</string>
+<string name="labelUpdate">update</string>
+</resources>

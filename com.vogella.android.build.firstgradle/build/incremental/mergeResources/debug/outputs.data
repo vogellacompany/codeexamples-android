@@ -1,0 +1,13 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1367328645000 124 e4dc1f61196810970085d7e6628edbe2f4d8dd47 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/values-sw720dp-land/values.xml
+1367328645000 3777 f8cbe1b82ece1fbd3ca3693a0f6ebc75c3358ec2 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/drawable-mdpi/ic_launcher.png
+1367328645000 12516 98b66fdda8255fcf8ded6b705517aa48216218d6 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/drawable-xhdpi/ic_launcher.png
+1367328645000 253 ec4baedf4e33e5dd41ea7e021286cd2089775c4a /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/menu/main.xml
+1367328645000 202 468d46ee6509bc16bfd1bfb5d3a5fe0db09965f9 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/values-v11/values.xml
+1367328645000 7658 8fcbd6375e2dd1996cedaaf7e3a8950364b886a0 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/drawable-hdpi/ic_launcher.png
+1367328645000 783 3003f97d70465f36133ad0470724a6369e7650d7 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/values/values.xml
+1367328645000 649 6626e1353d661023c9072803ed07545a9a724c16 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/layout/activity_main.xml
+1367328645000 216 35fa9ea9a38d4acf9c1845f98918bd654311aa07 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/values-v14/values.xml
+1367328645000 24777 83ded14cdff196da97a2e0fa16d9415228191fa7 /home/vogella/workspace/vogella/com.vogella.android.build.firstgradle/build/res/all/debug/drawable-xxhdpi/ic_launcher.png

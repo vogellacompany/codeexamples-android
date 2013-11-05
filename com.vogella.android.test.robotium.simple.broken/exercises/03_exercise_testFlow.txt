@@ -1,0 +1,13 @@
+Write a new RobotiumTest which tests the following:
+
+If "Start Activity" is pressed, the second activity starts. 
+Enter a text in the user field
+
+Press the ok button and check for the toast
+
+Press the cancel button and validate that the MainActivity 
+is displayed again
+
+Note: If you your application does not behave as intent,
+fix them in the application under text
+

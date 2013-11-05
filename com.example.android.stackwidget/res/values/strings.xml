@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, StackWidgetActivity!</string>
+    <string name="app_name">StackWidget</string>
+    <string name="empty_view_text">This is an empty view</string>
+
+</resources>

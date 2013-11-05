@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="User Settings" >
+        <EditTextPreference
+            android:key="username"
+            android:summary="Please maintain your user"
+            android:title="User Name" />
+        <EditTextPreference
+            android:key="password"
+            android:summary="Please maintain your password"
+            android:title="Password" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

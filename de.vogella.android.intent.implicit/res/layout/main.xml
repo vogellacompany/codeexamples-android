@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:alignmentMode="alignBounds"
+    android:columnCount="1" >
+
+      <Spinner
+        android:id="@+id/spinner"
+        android:layout_gravity="fill_horizontal"
+        android:drawSelectorOnTop="true"
+        >
+      </Spinner>
+    
+    <Button
+        android:id="@+id/trigger"
+        android:onClick="onClick"
+        android:text="Trigger Intent">
+    </Button>
+
+  
+</GridLayout>

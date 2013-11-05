@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/menuItemClear" android:title="Clear Screen">
+	</item>
+	<item android:id="@+id/menuItemLineSize" android:title="Line Size">
+		<menu>
+			<group android:checkableBehavior="single">
+				<item android:id="@+id/small" android:title="Small" />
+				<item android:id="@+id/medium" android:title="Medium" />
+				<item android:id="@+id/large" android:title="Large" />
+			</group>
+		</menu>
+	</item>
+</menu>
+

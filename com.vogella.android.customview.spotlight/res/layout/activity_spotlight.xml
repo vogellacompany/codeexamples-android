@@ -1,0 +1,70 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:s="http://schemas.android.com/apk/res/com.example.spotlight"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".SpotlightActivity" >
+
+    <RelativeLayout
+        android:id="@+id/content"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+
+		android:visibility="invisible"
+
+    	android:background="@drawable/photo_background">
+
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginBottom="32dp"
+	        android:layout_marginLeft="32dp"
+
+	        android:paddingLeft="8dp"
+	        android:paddingRight="8dp"
+	        android:paddingBottom="4dp"
+
+			android:background="#a7000000"
+	        
+	        android:text="@string/photo_info"
+	        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+	        android:textSize="24sp" />
+	
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@id/textView2"
+	        android:layout_alignLeft="@id/textView2"
+	        android:layout_marginBottom="10dp"
+
+	        android:paddingLeft="8dp"
+	        android:paddingRight="8dp"
+	        android:paddingBottom="4dp"
+
+	        android:background="#a7000000"
+
+			android:text="@string/photo_title"
+	        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+	        android:textSize="36sp" />
+
+	</RelativeLayout>
+
+    <com.example.spotlight.SpotlightView
+        android:id="@+id/spotlight"
+
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+
+		android:alpha="0.0"
+
+    	s:target="@id/content"
+    	s:mask="@drawable/spot_mask" />
+
+</FrameLayout>

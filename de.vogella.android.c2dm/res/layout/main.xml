@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<EditText android:id="@+id/editText1" android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:hint="Enter C2DM registered User"
+		></EditText>
+	<LinearLayout android:layout_height="match_parent"
+		android:layout_width="match_parent" android:id="@+id/linearLayout1"
+		android:gravity="center">
+		<Button android:id="@+id/button1" android:text="Register for Push Notification"
+			android:layout_height="wrap_content" android:onClick="register"
+			android:layout_width="wrap_content"></Button>
+	</LinearLayout>
+
+</LinearLayout>

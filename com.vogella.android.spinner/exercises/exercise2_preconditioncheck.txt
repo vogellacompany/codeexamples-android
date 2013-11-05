@@ -1,0 +1,10 @@
+Setup and check precondition
+
+SetUp()
+Get a reference to the Activity
+Get a reference to the Spinner
+Get a reference to the Adapter of the spinner
+
+Check precondition via test 
+Check the the Spinner has an item selection listener
+Check that the adapter is not null and the number of items in the adapter is > 0

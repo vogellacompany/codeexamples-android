@@ -1,0 +1,19 @@
+Write a test to validate that Spinner 
+keeps its state if the Activity has been finished
+
+// Destroy the activity
+mActivity.finish();
+// Restart
+mActivity = this.getActivity();
+
+
+Write a new test to validate that Spinner 
+keeps its state if the configuration changes happen
+Instrumentation mInstr = this.getInstrumentation();
+…
+mInstr.callActivityOnPause(mActivity);
+…
+mInstr.callActivityOnResume(mActivity);
+
+		
+ 

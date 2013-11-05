@@ -1,0 +1,5 @@
+Translate your user interface to another language of your choice and
+ensure that your test is language independent
+
+Hint: Use R from the application under test and get
+the String via via solo.getString(R.string.button1)

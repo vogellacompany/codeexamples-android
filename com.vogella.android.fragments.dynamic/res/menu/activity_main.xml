@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/actionadd1"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="Add1"/>
+    <item
+        android:id="@+id/actionadd2"
+        android:showAsAction="ifRoom"
+        android:title="Add2">
+    </item>
+
+</menu>

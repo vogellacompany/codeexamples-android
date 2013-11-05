@@ -1,0 +1,9 @@
+Create new test class. Extend ActivityUnitTestCase for your test class
+
+Develop first test method for createQuery using Mockito. Mock 
+the Context object.
+
+
+Develop second test method. Use mock for application to check onCreate()
+use the information of the Application correctly
+

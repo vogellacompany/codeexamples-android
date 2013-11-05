@@ -1,0 +1,11 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent" >
+ 
+ <StackView
+ android:id="@+id/stackView1"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent" android:animateLayoutChanges="true">
+ </StackView>
+ 
+</FrameLayout>

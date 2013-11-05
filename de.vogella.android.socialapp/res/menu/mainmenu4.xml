@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/menu_share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:showAsAction="ifRoom"
+        android:title="Share"/>
+    <item
+        android:id="@+id/preferences"
+        android:showAsAction="ifRoom"
+        android:title="Preferences">
+    </item>
+    <item
+        android:id="@+id/preferences2"
+        android:showAsAction="ifRoom"
+        android:title="More">
+    </item>
+    <item
+        android:id="@+id/preferences3"
+        android:showAsAction="ifRoom"
+        android:title="Internet">
+    </item>
+    <item
+        android:id="@+id/preferences4"
+        android:showAsAction="ifRoom"
+        android:title="Take Picture">
+    </item>
+    <item
+        android:id="@+id/preferences5"
+        android:showAsAction="ifRoom"
+        android:title="Share with others">
+    </item>
+    <item
+        android:id="@+id/preferences6"
+        android:showAsAction="ifRoom"
+        android:title="Time">
+    </item>
+
+</menu>

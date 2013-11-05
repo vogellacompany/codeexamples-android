@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TableLayout android:layout_width="match_parent"
+		android:id="@+id/tableLayout1" android:layout_height="wrap_content"
+		android:stretchColumns="1">
+		<TableRow android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:id="@+id/tableRow1">
+			<EditText android:text="Field1" android:id="@+id/editText1"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></EditText>
+			<EditText android:text="Field2" android:id="@+id/editText2"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_column="2"></EditText>
+		</TableRow>
+		<View android:layout_width="wrap_content" android:id="@+id/view1"
+			android:layout_height="4px" android:background="#FF0000"></View>
+		<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<EditText android:layout_height="wrap_content" android:text="Field3"
+				android:layout_width="wrap_content" android:id="@+id/editText3"></EditText>
+			<EditText android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:text="Field4"
+				android:id="@+id/editText4"></EditText>
+		</TableRow>
+
+	</TableLayout>
+	<Button android:text="Hide second column" android:id="@+id/collapse"
+		android:onClick="toggleHiddenRows" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></Button>
+</LinearLayout>

@@ -1,0 +1,9 @@
+Write a RobotiumTest which tests the following
+
+Starting Activity is MainActivity
+Press "Update Text" and validate that the user interface 
+contains a value starting "Current"
+
+If "Start Activity" is pressed, the second activity starts
+
+If you find errors in the application under test, fix them

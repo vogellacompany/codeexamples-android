@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, PlaySound!</string>
+    <string name="app_name">Playsound</string>
+<string name="buttontext">Press me to play</string>
+</resources>

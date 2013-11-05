@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+ <resources>
+	<style name="Title">
+  <item name="android:textSize">30sp</item> 
+  <item name="android:typeface">serif</item> 
+  <item name="android:textColor">@color/title</item> 
+  </style>
+ <style name="Button">
+  <item name="android:textSize">20sp</item> 
+  <item name="android:padding">10px</item> 
+  </style>
+ 
+</resources>

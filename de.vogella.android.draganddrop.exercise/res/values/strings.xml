@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, DragActivity!</string>
+    <string name="app_name">Drag and Drop Test</string>
+
+</resources>

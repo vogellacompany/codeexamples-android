@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference android:key="checkboxPreference"
+		android:title="Check"></CheckBoxPreference>
+	<EditTextPreference android:key="myTextPreference"
+		android:title="User" android:digits="012345789"></EditTextPreference>
+	<ListPreference android:entries="@array/myarray1"
+		android:entryValues="@array/myarray2" android:dependency="checkboxPreference" android:key="value"></ListPreference>
+	<PreferenceCategory android:title="This is my new Group">
+		<EditTextPreference android:summary="Stuff"></EditTextPreference>
+		<EditTextPreference android:title="Testing"></EditTextPreference>
+	</PreferenceCategory>
+
+</PreferenceScreen>

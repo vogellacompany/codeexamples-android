@@ -1,0 +1,5 @@
+Create a new test project called “com.vogella.android.spinner.test”
+
+Create SpinnerActivityTest class in 
+it, extending 
+android.test.ActivityInstrumentationTestCase2<SpinnerActivity>

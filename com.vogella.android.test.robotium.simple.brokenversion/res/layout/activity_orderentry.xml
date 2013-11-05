@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_column="0"
+        android:layout_gravity="left|top"
+        android:layout_row="0"
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_column="1"
+        android:layout_gravity="right|top"
+        android:layout_row="0"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_column="0"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:text="Password"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_column="1"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:ems="10"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/okClicked"
+        android:layout_column="1"
+        android:layout_margin="30dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_row="1"
+        android:text="Ok"
+        android:onClick="onClick" />
+
+    <Button
+        android:id="@+id/cancelClicked"
+        android:layout_column="0"
+        android:layout_gravity="right|bottom"
+        android:layout_row="1"
+        android:text="Cancel"
+        android:onClick="onClicked" />
+
+</GridLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyThemeHolo" parent="@android:style/Theme.Holo.Light">
+        <item name="android:listViewStyle">@style/MyListView</item>
+    </style>
+
+    <style name="MyListView" parent="@android:style/Widget.ListView">
+        <item name="android:background">@drawable/foot</item>
+        <item name="android:fastScrollAlwaysVisible">true</item>
+    </style>
+
+</resources>
