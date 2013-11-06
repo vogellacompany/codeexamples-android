@@ -1,11 +1,13 @@
 package com.vogella.android.test.simpleactivity.test;
 
 import android.app.Instrumentation.ActivityMonitor;
+import android.content.pm.ActivityInfo;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
 import android.test.ViewAsserts;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.vogella.android.test.simpleactivity.MainActivity;
@@ -15,6 +17,7 @@ import com.vogella.android.test.simpleactivity.SecondActivity;
 public class MainActivityFunctionalTest extends
 		ActivityInstrumentationTestCase2<MainActivity> {
 
+	protected static final String INPUT = "FOR TESTING";
 	private MainActivity activity;
 
 	public MainActivityFunctionalTest() {
@@ -29,7 +32,17 @@ public class MainActivityFunctionalTest extends
 	}
 
 	public void testStartSecondActivity() throws Exception {
+		final EditText editText = (EditText) activity
+				.findViewById(R.id.editText1);
+	
+		
+		activity.runOnUiThread(new Runnable() {
 
+			@Override
+			public void run() {
+				editText.setText(INPUT);
+			}
+		});
 		// Add monitor to check for the second activity
 		ActivityMonitor monitor = getInstrumentation().addMonitor(
 				SecondActivity.class.getName(), null, false);
@@ -54,12 +67,10 @@ public class MainActivityFunctionalTest extends
 		ViewAsserts.assertOnScreen(startedActivity.getWindow().getDecorView(),
 				textView);
 		// Validate the text on the TextView
-		assertEquals("Text incorrect", "Started", textView.getText().toString());
-
+		assertEquals("Text incorrect", INPUT, textView.getText().toString());
 		// Press back and click again
 		this.sendKeys(KeyEvent.KEYCODE_BACK);
 		TouchUtils.clickView(this, view);
-
 	}
 
 }

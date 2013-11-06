@@ -40,8 +40,7 @@ public class MainActivityUnitTest extends
 		Button view = (Button) activity.findViewById(buttonId);
 		assertNotNull("Button not allowed to be null", view);
 
-		// You would call the method directly via
-		getActivity().onClick(view);
+		view.performClick();
 		
 		// TouchUtils cannot be used, only allowed in 
 		// InstrumentationTestCase or ActivityInstrumentationTestCase2 

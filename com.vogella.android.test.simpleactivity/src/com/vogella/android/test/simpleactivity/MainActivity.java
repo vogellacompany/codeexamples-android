@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
@@ -14,8 +15,12 @@ public class MainActivity extends Activity {
 	}
 
 	public void onClick(View view) {
+		EditText editText = (EditText) findViewById(R.id.editText1);
+		String string = editText.getText().toString();
 		Intent intent = new Intent(this, SecondActivity.class);
 		intent.putExtra("URL", "http://www.vogella.com");
+		intent.putExtra("TEXT", string);
+		
 		startActivity(intent);
 	}
 }
