@@ -5,6 +5,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import android.content.Context;
@@ -28,6 +29,8 @@ public class MainActivtityTest extends ActivityUnitTestCase<MainActivity> {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		System.setProperty("dexmaker.dexcache", getInstrumentation()
+				.getTargetContext().getCacheDir().toString());
 		MockitoAnnotations.initMocks(this);
 
 		myApp = mock(MyApp.class);

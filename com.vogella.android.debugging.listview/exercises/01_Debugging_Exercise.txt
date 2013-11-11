@@ -1,0 +1,2 @@
+Start this application. The list is not displayed. Debug the
+super() method call in your MyArrayAdapter constructor to find the reason.

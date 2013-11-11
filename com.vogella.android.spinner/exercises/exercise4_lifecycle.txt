@@ -1,0 +1,10 @@
+Write a test to validate that Spinner 
+keeps its state if the Activity has been finished
+
+// set the state in the spinner
+
+// Destroy the activity
+mActivity.finish();
+
+// Restart
+mActivity = this.getActivity();

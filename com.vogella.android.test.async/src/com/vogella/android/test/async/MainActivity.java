@@ -37,6 +37,9 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
+			// TODO nutze Ergebnis...
+			
+			// Inform listner
 			if (listener != null) {
 				listener.executionDone();
 			}

@@ -76,11 +76,11 @@ public class SpinnerActivityTest extends
 		assertEquals(resultText, mSelection);
 	}
 
+	@UiThreadTest
 	public void testStateTerminate() {
 		mActivity.setSpinnerPosition(TEST_STATE_DESTROY_POSITION);
 		mActivity.setSpinnerSelection(TEST_STATE_DESTROY_SELECTION);
 
-		// Destroy the activity
 		mActivity.finish();
 		// Restart
 		mActivity = this.getActivity();

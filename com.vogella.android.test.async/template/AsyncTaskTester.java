@@ -35,24 +35,14 @@ public class AsyncTaskTester extends ActivityUnitTestCase<MainActivity> {
 	    // create CountDownLatch for which the test can wait.
 	    final CountDownLatch latch = new CountDownLatch(1);
 
-	    activity.setListener(new IJobListener() {
-			
-			@Override
-			public void executionDone() {
-				latch.countDown();
-			}
-		});
+	    // TODO create new instance of IJobListener listener 
+	    // TODO use activity.setListener to register for the the countdown via latch.countDown();
 	    
 	    // Execute the async task on the UI thread! THIS IS KEY!
-	    runTestOnUiThread(new Runnable() {
-
-	        @Override
-	        public void run() {
-	        	Button button = (Button) activity.findViewById(R.id.button1);
-	        	button.performClick();
-	        }
-	    });       
-
+	    // TODO search the button and click it, use runTestOnUiThread(new Runnable() for this
+	    
+	       
+	    
 	    boolean await = latch.await(30, TimeUnit.SECONDS);
 
 	    assertTrue(await);

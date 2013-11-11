@@ -1,0 +1,10 @@
+Write a new test to validate that Spinner 
+keeps its state if the activity is paused
+Instrumentation mInstr = this.getInstrumentation();
+…
+mInstr.callActivityOnPause(mActivity);
+…
+mInstr.callActivityOnResume(mActivity);
+
+		
+ 

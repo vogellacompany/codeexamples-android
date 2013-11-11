@@ -300,7 +300,7 @@ public class SpinnerActivity extends Activity {
 		 */
 
 		SharedPreferences p = c.getSharedPreferences(PREFERENCES_FILE,
-				MODE_WORLD_READABLE);
+				MODE_PRIVATE);
 		/*
 		 * Get the position and value of the spinner from the file, or a default
 		 * value if the key-value pair does not exist.
@@ -333,7 +333,7 @@ public class SpinnerActivity extends Activity {
 		 */
 
 		SharedPreferences p = c.getSharedPreferences(
-				SpinnerActivity.PREFERENCES_FILE, MODE_WORLD_READABLE);
+				SpinnerActivity.PREFERENCES_FILE, Activity.MODE_PRIVATE);
 
 		/*
 		 * Get the editor for this object. The editor interface abstracts the

@@ -3,7 +3,7 @@ package de.vogella.android.temperature;
 public class ConverterUtil {
 	// converts to celsius
 	public static float convertFahrenheitToCelsius(float fahrenheit) {
-		return ((fahrenheit - 32) * 5 / 9);
+		return ((fahrenheit - 32 * 5 / 9));
 	}
 
 	// converts to fahrenheit
