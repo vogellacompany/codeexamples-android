@@ -40,9 +40,6 @@ public class MainActivity extends Activity {
 				DownloadService.NOTIFICATION));
 	}
 	
-	
-	
-	
 	@Override
 	protected void onPause() {
 		super.onPause();
