@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8e0c3"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/last_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:padding="12dp"
+        android:text="12 Apr, 13:00"
+        android:textColor="#3a3a3a"
+        android:textSize="14sp" />
+
+    <ListView
+        android:id="@+id/feeds_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e8e0c3"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Refresh"
+        android:textAllCaps="true"
+        android:textColor="#3a3a3a"
+        android:textSize="14sp" />
+
+</LinearLayout>

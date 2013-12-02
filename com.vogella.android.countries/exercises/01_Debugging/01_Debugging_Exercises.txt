@@ -1,0 +1,28 @@
+Exercise 1:
+-----------
+	After launching the application you suppose to see a list of countries registered
+	in the system. There is a bug in the implementation which causes the list to show
+	empty strings.
+
+Steps:
+ 	1. Launch the application normally.
+ 	2. Realizing that their is a problem, you switch Debug mode on in the DDMS
+ 	   perspective.
+	3. Put a breakpoint in MainActivity.onCreate(Bundle savedInstanceState) and
+	   re-launch the activity.
+ 	4. Execute CountryUtils.getCountries() statement and check the value of 
+ 	   "countries" variable. If you believe the value is incorrect, use "Step into" 
+ 	   debug function to find the issue.
+ 	5. Fix the issue.
+ 	6. Launch the application and make sure the list of countries is shown correctly.
+
+
+Exercise 2:
+-----------
+	If you click an item in the list, application will show a toast message with the
+	name of the country clicked. There is a bug in the applications which makes this
+	function not working properly.
+
+Steps:
+ 	1. Debug MainActivity.onListItemClick() method and fix the issue.
+ 	2. Launch the application and make sure correct item is show in the toast.

@@ -1,0 +1,59 @@
+Exercise 1:
+-----------
+	In this exercise we will create new Android Test Project.
+
+Steps:
+	1. Open menu File - New - Other ... - Android / Android Test Project
+	2. * Project Name: "com.vogella.android.countries.test"
+       * Select "com.vogella.android.countries" as the project to test
+	     Press Next
+	   * Choose "Android 4.2.2"
+	     Press Finish
+	     
+	   New project "com.vogella.android.countries.test" will appear in your
+	   workspace. We are done.
+
+
+Exercise 2:
+-----------
+	In this exercise we will create a simple JUnit test case for our CountryUtils class.
+	We will extend standard junit.framework.TestCase.
+	
+Steps:
+	1. Continue to work with 
+	   the "com.vogella.android.countries.test" project in this exercise.
+	2. Create new CountryUtilsText class as following:
+	   * Right mouse click on "src" folder - New - JUnit Test Case
+	   * Source folder: "com.vogella.android.countries-test/src"
+	     Package: "com.vogella.android.countries"
+	     Name: "CountryUtilsText"
+	     Superclass: "junit.framework.TestCase"
+	     Class under test: "com.vogella.android.countries.CountryUtils"
+	     Press "Finish"
+	3. Create new public testGetCountries() method. In this method we will test 
+	   CountryUtils.getCountries() implementation.
+	4. Implement the method as following:
+	   * Get list of countries by calling CountryUtils.getCountries()
+	   * Assert the list is not null. Use Assert.assertNotNull() method.
+	   * Assert size of the list. It must not be 0. You might find Assert.assertTrue()
+	     method useful for that.
+	   * Iterate over all countries and assert that none element of that list is an empty
+	    string.
+	5. Execute all test cases as following:
+	   * Right mouse click on "com.vogella.android.countries.test" project - Run As ... -
+	     Android JUnit Test.
+	6. Make sure all tests run without errors.
+
+
+Exercise 3:
+-----------
+	In this exercise we will create a simple Android Unit Test for our StringListAdapter 
+	class. For that we will extend android.test.AndroidTestCase. This class will allows
+	us to use Android context class in our tests. 
+
+Steps:
+	1. Copy /exercises/02/SimpleAndroidTestCase.java file located in 
+	   com.vogella.android.countries project to the "src/com/vogella/android/countries/" folder
+	   of com.vogella.android.countries.test.
+	2. Solve all TODO's in the test file.
+	3. Execute all tests and make sure test case runs with no errors.

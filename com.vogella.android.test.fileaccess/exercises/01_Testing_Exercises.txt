@@ -1,0 +1,48 @@
+Exercise 1:
+-----------
+	In this exercise we will create new Android Test Project.
+
+Steps:
+	1. Open menu File - New - Other ... - Android / Android Test Project
+	2. * Project Name: "com.vogella.android.test.fileaccess.test"
+       * Select "com.vogella.android.test.fileaccess" as the project to test
+	     Press Next
+	   * Select fitting Android version
+	     Press Finish
+	     
+
+Exercise 2:
+-----------
+	In this exercise we will create a simple JUnit test case and mock the Contenxt
+	We will extend standard junit.framework.TestCase.
+	
+Steps:
+	1. Continue to work with 
+	   the "com.vogella.android.test.fileaccess.test" project in this exercise.
+	2. Create new FileTest class 
+	3. Create new public testFileApplication() method. In this method we will test the
+	   Util.writeConfiguration(context) implementation.
+	4. Write your MockOutputStream extends FileOutputStream which which in its write() 
+	   function remembers how often it has called this. 
+	   
+	   Constructor:
+	   
+		public MockOutputStream() throws FileNotFoundException {	       
+			super(FileDescriptor.out);
+		}
+	5. Create a MockContext and override the openFileOutput() using your MockOutputStream
+	6. Assert that write was not called before you call Util.writeConfiguration(context) and twice aftewards
+
+
+Exercise 3:
+-----------
+	In this exercise we will create a simple Android Unit Test for our StringListAdapter 
+	class. For that we will extend android.test.AndroidTestCase. This class will allows
+	us to use Android context class in our tests. 
+
+Steps:
+	1. Copy /exercises/02/SimpleAndroidTestCase.java file located in 
+	   com.vogella.android.countries project to "src/com/vogella/android/countries/test" folder
+	   of com.vogella.android.countries.test.
+	2. Solve all TODO's in the test file.
+	3. Execute all tests and make sure test case runs with no errors.
