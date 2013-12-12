@@ -17,7 +17,6 @@ public class TestDatabaseActivity extends ListActivity {
 		setContentView(R.layout.main);
 
 		datasource = new CommentsDataSource(this);
-		datasource.open();
 
 		List<Comment> values = datasource.getAllComments();
 
@@ -60,8 +59,8 @@ public class TestDatabaseActivity extends ListActivity {
 	}
 
 	@Override
-	protected void onPause() {
-		super.onPause();
+	protected void onStop() {
+		super.onStop();
 		datasource.close();
 	}
 

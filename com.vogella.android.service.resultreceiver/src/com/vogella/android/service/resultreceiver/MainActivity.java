@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
 	}
 	
 	private void handleResult(Bundle bundle) {
-		if (bundle !receiverreceiver= null) {
+		if (bundle != null) {
 			String string = bundle.getString(DownloadService.FILEPATH);
 			int resultCode = bundle.getInt(DownloadService.RESULT);
 			if (resultCode == RESULT_OK) {

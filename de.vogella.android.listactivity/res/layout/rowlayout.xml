@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/icon"
         android:layout_width="22dp"
-        android:layout_height="22dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="4dp"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@+id/label"	
-        android:textSize="20dp" >
+        android:textSize="40sp" >
     </TextView>
    
 

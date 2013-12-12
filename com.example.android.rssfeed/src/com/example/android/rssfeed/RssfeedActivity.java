@@ -2,7 +2,10 @@ package com.example.android.rssfeed;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -19,6 +22,18 @@ public class RssfeedActivity extends Activity implements
 
 		setContentView(R.layout.activity_rssfeed);
 	}
+	
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onRestoreInstanceState(savedInstanceState);
+	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		outState.putString("tuet", "hallo");
+		super.onSaveInstanceState(outState);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,6 +48,8 @@ public class RssfeedActivity extends Activity implements
 		case R.id.action_refresh:
 			MyListFragment fragment = (MyListFragment) getFragmentManager()
 					.findFragmentById(R.id.listFragment);
+			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+			String url = preferences.getString("url", "");
 			fragment.updateListContent();
 			break;
 		case R.id.action_settings:

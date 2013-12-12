@@ -1,30 +1,23 @@
-package com.example.android.rssfeed;
+package com.example.android.rssfeed.asynctask;
 
 import java.util.List;
 
 import android.app.Activity;
 import android.app.ListFragment;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.android.rssfeed.MyAdapter;
+import com.example.android.rssfeed.RssApplication;
+import com.example.android.rssfeedlibrary.RssFeedProvider;
 import com.example.android.rssfeedlibrary.RssItem;
 
 public class MyListFragment extends ListFragment {
 	private OnItemSelectedListener listener;
-
-	private BroadcastReceiver receiver = new BroadcastReceiver() {
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			setListContent(RssApplication.list);
-		}
-	};
+	ParseTask parseTask;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,40 +27,57 @@ public class MyListFragment extends ListFragment {
 				android.R.layout.simple_list_item_1, list);
 		setListAdapter(adapter);
 		// setRetainInstance(true);
-		
 	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		MyAdapter adapter = (MyAdapter) getListAdapter();
-		adapter.notifyDataSetChanged();
-		getActivity().registerReceiver(receiver,
-				new IntentFilter(RssDownloadService.NOTIFICATION));
-	}
-	
 
-	@Override
-	public void onStop() {
-		super.onStop();
-		getActivity().unregisterReceiver(receiver);
-	}
+	// @Override
+	// public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	// Bundle savedInstanceState) {
+	// View view = inflater.inflate(R.layout.fragment_rsslist_overview,
+	// container, false);
+	//
+	// return view;
+	// }
+
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		RssItem item = (RssItem) getListAdapter().getItem(position);
 		updateDetail(item);
 	}
 
+	private static class ParseTask extends
+			AsyncTask<String, Void, List<RssItem>> {
+		private MyListFragment fragment;
+
+		public void setFragment(MyListFragment fragment) {
+			this.fragment = fragment;
+		}
+
+		@Override
+		protected List<RssItem> doInBackground(String... params) {
+			List<RssItem> list = RssFeedProvider.parse(params[0]);
+			return list;
+		}
+
+		@Override
+		protected void onPostExecute(List<RssItem> result) {
+			fragment.setListContent(result);
+		}
+	}
+
 	public void updateListContent() {
-		Intent intent = new Intent(getActivity(), RssDownloadService.class);
-		intent.putExtra("url", "http://www.vogella.com/article.rss");
-		getActivity().startService(intent);
+		if (parseTask == null) {
+			parseTask = new ParseTask();
+			parseTask.setFragment(this);
+			parseTask.execute("http://www.vogella.com/article.rss");
+		}
 	}
 
 	public void setListContent(List<RssItem> result) {
 		ArrayAdapter listAdapter = (ArrayAdapter) getListAdapter();
 		listAdapter.clear();
 		listAdapter.addAll(result);
+		parseTask.setFragment(null);
+		parseTask = null;
 	}
 
 	public interface OnItemSelectedListener {

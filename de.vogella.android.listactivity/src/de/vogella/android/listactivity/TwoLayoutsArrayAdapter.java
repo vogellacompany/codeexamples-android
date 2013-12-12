@@ -18,12 +18,12 @@ public class TwoLayoutsArrayAdapter extends ArrayAdapter<String> {
 	}
 
 	public TwoLayoutsArrayAdapter(Context context, String[] values) {
-		super(context, R.id.TextView01, values);
+		super(context, 0 , values);
 		this.values = values;
 		inflator = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
-
+	
 	@Override
 	public int getViewTypeCount() {
 		return 2;

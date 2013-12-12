@@ -35,6 +35,12 @@ public class DownloadService extends IntentService {
 	// called asynchronously be Android
 	@Override
 	protected void onHandleIntent(Intent intent) {
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 		String urlPath = intent.getStringExtra(URL);
 		String fileName = intent.getStringExtra(FILENAME);
 		File output = new File(Environment.getExternalStorageDirectory(),
