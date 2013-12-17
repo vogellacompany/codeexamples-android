@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.vogella.android.userinterface.MyShinyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+     >
+
+    <LinearLayout
+        android:id="@+id/buttonarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right" 
+        android:background="@drawable/list_selector_background_disabled_light"
+        >
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_selector_background_disabled_light"
+            android:src="@drawable/ic_menu_refresh" 
+            android:onClick="onClick"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="48dp"
+            android:layout_height="48dp" 
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <de.vogella.android.userinterface.RoundImageView2
+        android:id="@+id/editablePhoto1"
+        android:layout_width="173dp"
+        android:layout_height="198dp" 
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        />
+
+</de.vogella.android.userinterface.MyShinyLinearLayout>
