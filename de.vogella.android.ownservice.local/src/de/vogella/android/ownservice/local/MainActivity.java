@@ -17,7 +17,6 @@ import android.widget.Toast;
 public class MainActivity extends ListActivity {
 	private LocalWordService s;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,9 +60,8 @@ public class MainActivity extends ListActivity {
 	private ArrayAdapter<String> adapter;
 	private List<String> wordList;
 
-	public void showServiceData(View view) {
+	public void onClick(View view) {
 		if (s != null) {
-
 			Toast.makeText(this, "Number of elements" + s.getWordList().size(),
 					Toast.LENGTH_SHORT).show();
 			wordList.clear();
