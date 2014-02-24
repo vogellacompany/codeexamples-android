@@ -28,7 +28,10 @@ public class MyListActivity extends ListActivity {
 				"WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
 				"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu",
 				"Windows7", "Max OS X", "Linux", "OS/2" };
-		TwoLayoutsArrayAdapter  adapter = new TwoLayoutsArrayAdapter (this,  values);
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label, values);
+		MultiColumnAdapter adapter = new MultiColumnAdapter(this, values);
+//		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
+//		TwoLayoutsArrayAdapter  adapter = new TwoLayoutsArrayAdapter (this,  values);
 		// TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
 		// values);
 		setListAdapter(adapter);

@@ -18,16 +18,21 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 		this.values = values;
 	}
 
-
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View rowView = null;
+		View rowView = convertView;
+		if (rowView==null){
+			
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			
 			rowView = inflater.inflate(R.layout.rowlayout, parent, false);
-			TextView textView = (TextView) rowView.findViewById(R.id.label);
-			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-			// Change the icon for Windows and iPhone
+
+		}
+		
+		TextView textView = (TextView) rowView.findViewById(R.id.label);
+		ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+		// Change the icon for Windows and iPhone
 
 		String s = values[position];
 		textView.setText(s);

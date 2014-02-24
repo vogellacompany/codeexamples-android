@@ -34,10 +34,6 @@ public class TwoLayoutsArrayAdapter extends ArrayAdapter<String> {
 		return (position % 2 == 0) ? 0 : 1;
 	}
 
-	// public int getItemViewTypeInternal(int position) {
-	// return (position % 2 == 0) ? 0 : 1;
-	// }
-
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View rowView = null;
