@@ -1,7 +1,6 @@
 package com.vogella.android.drawable.lightswitch;
 
 
-import android.R;
 import android.app.Activity;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
