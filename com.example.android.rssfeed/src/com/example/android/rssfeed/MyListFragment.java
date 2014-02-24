@@ -11,7 +11,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.android.rssfeedlibrary.RssItem;
@@ -40,8 +39,6 @@ public class MyListFragment extends ListFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		MyAdapter adapter = (MyAdapter) getListAdapter();
-		adapter.notifyDataSetChanged();
 		getActivity().registerReceiver(receiver,
 				new IntentFilter(RssDownloadService.NOTIFICATION));
 	}
@@ -65,9 +62,11 @@ public class MyListFragment extends ListFragment {
 	}
 
 	public void setListContent(List<RssItem> result) {
-		ArrayAdapter listAdapter = (ArrayAdapter) getListAdapter();
+		@SuppressWarnings("unchecked")
+		ArrayAdapter<RssItem> listAdapter = (ArrayAdapter<RssItem>) getListAdapter();
 		listAdapter.clear();
 		listAdapter.addAll(result);
+		
 	}
 
 	public interface OnItemSelectedListener {

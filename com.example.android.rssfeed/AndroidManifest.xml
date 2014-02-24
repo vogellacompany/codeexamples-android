@@ -28,7 +28,7 @@
             android:name=".DetailActivity"
             android:label="Details" >
         </activity>
-        <activity android:name="MyPreferenceActivity" >
+        <activity android:name="SettingsActivity" >
         </activity>
 
         <service android:name="RssDownloadService" >

@@ -24,5 +24,4 @@ public class RssDownloadService extends IntentService {
 		Intent i = new Intent(NOTIFICATION);
 		sendBroadcast(i);		
 	}
-
 }
