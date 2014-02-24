@@ -5,4 +5,14 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    <string-array name="operationsystems">
+        <item>Ubuntu</item>
+        <item>Android</item>
+        <item>Microsoft Windows</item>
+    </string-array>
+
+    <color name="red">#ffff0000</color>
+
+    <dimen name="mymargin">10dp</dimen>
+
 </resources>

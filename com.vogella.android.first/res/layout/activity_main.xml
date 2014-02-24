@@ -9,8 +9,21 @@
     tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+
+    <!--
+        NOTE: More attributes are required 
+        for the correct layout of the ImageView. These are feft 
+        out for brevity
+    -->
+
+    <ImageView
+        android:id="@+id/myicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/initial" />
 
 </RelativeLayout>
