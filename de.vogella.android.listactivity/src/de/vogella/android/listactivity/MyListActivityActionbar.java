@@ -1,5 +1,6 @@
 package de.vogella.android.listactivity;
 
+import de.vogella.android.listactivity.adapters.MySimpleArrayAdapter;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.ActionMode;

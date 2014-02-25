@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MyListActivity extends ListActivity {
@@ -28,9 +29,9 @@ public class MyListActivity extends ListActivity {
 				"WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
 				"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu",
 				"Windows7", "Max OS X", "Linux", "OS/2" };
-//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label, values);
-		MultiColumnAdapter adapter = new MultiColumnAdapter(this, values);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label, values);
 //		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
+//		MultiColumnAdapter adapter = new MultiColumnAdapter(this, values);
 //		TwoLayoutsArrayAdapter  adapter = new TwoLayoutsArrayAdapter (this,  values);
 		// TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
 		// values);

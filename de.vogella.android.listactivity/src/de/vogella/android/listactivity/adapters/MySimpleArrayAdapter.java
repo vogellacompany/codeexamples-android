@@ -1,5 +1,9 @@
-package de.vogella.android.listactivity;
+package de.vogella.android.listactivity.adapters;
 
+import de.vogella.android.listactivity.R;
+import de.vogella.android.listactivity.R.drawable;
+import de.vogella.android.listactivity.R.id;
+import de.vogella.android.listactivity.R.layout;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

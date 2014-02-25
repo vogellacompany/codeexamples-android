@@ -1,4 +1,4 @@
-package de.vogella.android.listactivity;
+package de.vogella.android.listactivity.adapters;
 
 import java.util.ArrayList;
 import java.util.HashMap;

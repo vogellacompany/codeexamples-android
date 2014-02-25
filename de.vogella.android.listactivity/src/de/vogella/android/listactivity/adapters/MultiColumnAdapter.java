@@ -1,4 +1,4 @@
-package de.vogella.android.listactivity;
+package de.vogella.android.listactivity.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
