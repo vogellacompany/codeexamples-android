@@ -6,15 +6,33 @@ import java.util.List;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import de.vogella.android.listactivity.adapters.TwoLayoutsArrayAdapter;
 
 public class MyListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		// setContentView(R.layout.main);
 		// List<Person> values = createModel();
-		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+		String[] values = buildData();
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//				android.R.layout.simple_list_item_1, android.R.id.text1, values);
+		// ArrayAdapter<String> adapter =
+		// new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label,
+		// values);
+	
+//		 MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this,
+//		 values);
+		// MultiColumnAdapter adapter = new MultiColumnAdapter(this, values);
+		 TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter (this,
+		 values);
+		// TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
+		// values);
+		setListAdapter(adapter);
+	}
+
+	private String[] buildData() {
+		return new String[] { "Android", "iPhone", "WindowsMobile",
 				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
 				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
 				"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
@@ -29,13 +47,6 @@ public class MyListActivity extends ListActivity {
 				"WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
 				"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu",
 				"Windows7", "Max OS X", "Linux", "OS/2" };
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label, values);
-//		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
-//		MultiColumnAdapter adapter = new MultiColumnAdapter(this, values);
-//		TwoLayoutsArrayAdapter  adapter = new TwoLayoutsArrayAdapter (this,  values);
-		// TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
-		// values);
-		setListAdapter(adapter);
 	}
 
 	private List<Person> createModel() {
@@ -99,7 +110,7 @@ public class MyListActivity extends ListActivity {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 	}
-	
+
 	@Override
 	protected void onStop() {
 		super.onStop();
