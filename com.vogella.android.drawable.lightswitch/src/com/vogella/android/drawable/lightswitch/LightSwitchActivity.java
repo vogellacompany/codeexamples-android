@@ -4,6 +4,7 @@ package com.vogella.android.drawable.lightswitch;
 import android.app.Activity;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -15,7 +16,9 @@ public class LightSwitchActivity extends Activity {
 	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
+		if (BuildConfig.DEBUG) {
+			Log.i("CATEGORY", "AHHHHH!!!");
+		}
 		
 		final ImageView image = (ImageView) findViewById(R.id.image);
 		final ToggleButton button = (ToggleButton) findViewById(R.id.button);
