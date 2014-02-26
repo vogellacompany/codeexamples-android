@@ -7,7 +7,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import de.vogella.android.listactivity.adapters.TwoLayoutsArrayAdapter;
+import de.vogella.android.listactivity.adapters.MySimpleArrayAdapter;
 
 public class MyListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
@@ -21,11 +21,11 @@ public class MyListActivity extends ListActivity {
 		// new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label,
 		// values);
 	
-//		 MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this,
-//		 values);
+		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this,
+  values);
 		// MultiColumnAdapter adapter = new MultiColumnAdapter(this, values);
-		 TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter (this,
-		 values);
+//		 TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter (this,
+//		 values);
 		// TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
 		// values);
 		setListAdapter(adapter);

@@ -33,6 +33,7 @@ public class MyPerformanceArrayAdapter extends ArrayAdapter<String> {
 		if (rowView == null) {
 			LayoutInflater inflater = context.getLayoutInflater();
 			rowView = inflater.inflate(R.layout.rowlayout, null);
+			
 			ViewHolder viewHolder = new ViewHolder();
 			viewHolder.text = (TextView) rowView.findViewById(R.id.label);
 			viewHolder.image = (ImageView) rowView.findViewById(R.id.icon);
