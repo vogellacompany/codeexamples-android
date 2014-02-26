@@ -29,8 +29,7 @@ public class MyListFragment extends ListFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		List<RssItem> list = RssApplication.list;
-		MyAdapter adapter = new MyAdapter(getActivity(),
-				android.R.layout.simple_list_item_1, list);
+		RssItemListAdapter adapter = new RssItemListAdapter(getActivity(), list);
 		setListAdapter(adapter);
 		// setRetainInstance(true);
 		
@@ -42,7 +41,6 @@ public class MyListFragment extends ListFragment {
 		getActivity().registerReceiver(receiver,
 				new IntentFilter(RssDownloadService.NOTIFICATION));
 	}
-	
 
 	@Override
 	public void onStop() {

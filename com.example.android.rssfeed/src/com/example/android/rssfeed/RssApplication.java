@@ -9,4 +9,15 @@ import com.example.android.rssfeedlibrary.RssItem;
 
 public class RssApplication extends Application {
 	public static List<RssItem> list = new ArrayList<RssItem>();
+	
+	@Override
+	public void onLowMemory() {
+		super.onLowMemory();
+	}
+	@Override
+	public void onTrimMemory(int level) {
+		// TODO Auto-generated method stub
+		super.onTrimMemory(level);
+	}
+	
 }

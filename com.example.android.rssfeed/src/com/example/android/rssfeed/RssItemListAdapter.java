@@ -11,25 +11,27 @@ import android.widget.TextView;
 
 import com.example.android.rssfeedlibrary.RssItem;
 
-public class MyAdapter extends ArrayAdapter<RssItem> {
+public class RssItemListAdapter extends ArrayAdapter<RssItem> {
 
 	private Context context;
 	private List<RssItem> items;
 
-	public MyAdapter(Context context, int textViewResourceId,
-			List<RssItem> items) {
-		super(context, textViewResourceId, items);
+	public RssItemListAdapter(Context context, List<RssItem> items) {
+		super(context, android.R.layout.simple_list_item_1, items);
 		this.context = context;
 		this.items = items;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		// not performance optimized
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(android.R.layout.simple_list_item_1, null);
-		TextView textView = (TextView) view.findViewById(android.R.id.text1);
-		textView.setText(items.get(position).getTitle());
+		View view = inflater.inflate(R.layout.listview_rowlayout, null);
+		TextView rssTitelView = (TextView) view.findViewById(R.id.rsstitle);
+		rssTitelView.setText(items.get(position).getTitle());
+		TextView rssUrlView = (TextView) view.findViewById(R.id.rssurl);
+		rssUrlView.setText(items.get(position).getLink());
 		return view;
 	}
 }

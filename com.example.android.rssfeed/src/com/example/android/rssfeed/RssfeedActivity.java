@@ -1,6 +1,8 @@
 package com.example.android.rssfeed;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,10 +13,21 @@ import android.view.MenuItem;
 public class RssfeedActivity extends Activity implements
 		MyListFragment.OnItemSelectedListener {
 
+	private static final String HEADLESS = "HEADLESS";
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rssfeed);
+		FragmentManager manager = getFragmentManager();
+		HeadlessFragment headlessFragment = (HeadlessFragment) manager.findFragmentByTag(HEADLESS);
+		
+		if (headlessFragment==null) {
+			FragmentTransaction transaction = manager.beginTransaction();
+			transaction.add(new HeadlessFragment(), HEADLESS);
+			transaction.commit();
+		}
+		
 	}
 	
 	@Override

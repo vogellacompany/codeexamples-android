@@ -9,7 +9,6 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
         class="com.example.android.rssfeed.MyListFragment" ></fragment>
     <fragment
         android:id="@+id/detailFragment"

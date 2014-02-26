@@ -1,5 +1,6 @@
 package com.example.android.rssfeed.asynctask;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -10,23 +11,21 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.android.rssfeed.MyAdapter;
-import com.example.android.rssfeed.RssApplication;
 import com.example.android.rssfeedlibrary.RssFeedProvider;
 import com.example.android.rssfeedlibrary.RssItem;
 
 public class MyListFragment extends ListFragment {
 	private OnItemSelectedListener listener;
 	ParseTask parseTask;
+	private List<RssItem> list = new ArrayList<RssItem>();;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		List<RssItem> list = RssApplication.list;
-		MyAdapter adapter = new MyAdapter(getActivity(),
-				android.R.layout.simple_list_item_1, list);
+		ArrayAdapter adapter = new ArrayAdapter<RssItem>(getActivity(),
+				android.R.layout.simple_list_item_1, android.R.id.text1, list);
 		setListAdapter(adapter);
-		// setRetainInstance(true);
+		setRetainInstance(true);
 	}
 
 	// @Override
@@ -54,8 +53,8 @@ public class MyListFragment extends ListFragment {
 
 		@Override
 		protected List<RssItem> doInBackground(String... params) {
-			List<RssItem> list = RssFeedProvider.parse(params[0]);
-			return list;
+			List<RssItem> result = RssFeedProvider.parse(params[0]);
+			return result;
 		}
 
 		@Override
@@ -73,6 +72,7 @@ public class MyListFragment extends ListFragment {
 	}
 
 	public void setListContent(List<RssItem> result) {
+		list = result;
 		ArrayAdapter listAdapter = (ArrayAdapter) getListAdapter();
 		listAdapter.clear();
 		listAdapter.addAll(result);
