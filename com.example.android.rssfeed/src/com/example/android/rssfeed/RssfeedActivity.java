@@ -19,14 +19,6 @@ public class RssfeedActivity extends Activity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rssfeed);
-		FragmentManager manager = getFragmentManager();
-		HeadlessFragment headlessFragment = (HeadlessFragment) manager.findFragmentByTag(HEADLESS);
-		
-		if (headlessFragment==null) {
-			FragmentTransaction transaction = manager.beginTransaction();
-			transaction.add(new HeadlessFragment(), HEADLESS);
-			transaction.commit();
-		}
 		
 	}
 	
@@ -52,11 +44,12 @@ public class RssfeedActivity extends Activity implements
 		switch (item.getItemId()) {
 
 		case R.id.action_refresh:
-			MyListFragment fragment = (MyListFragment) getFragmentManager()
-					.findFragmentById(R.id.listFragment);
+			
 			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-			String url = preferences.getString("url", "");
-			fragment.updateListContent();
+			String url = preferences.getString("url", "http://www.vogella.com/article.rss");
+			Intent i = new Intent(this, RssDownloadService.class);
+			i.putExtra("url", url);
+			startService(i);
 			break;
 		case R.id.action_settings:
 			Intent intent = new Intent(this, SettingsActivity.class);

@@ -10,6 +10,7 @@ import com.example.android.rssfeedlibrary.RssFeedProvider;
 import com.example.android.rssfeedlibrary.RssItem;
 
 public class RssDownloadService extends IntentService {
+	
 	public static String NOTIFICATION = "rssfeedupdated";
 	public RssDownloadService() {
 		super("RssDownloadService");

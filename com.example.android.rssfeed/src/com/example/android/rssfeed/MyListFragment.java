@@ -47,16 +47,11 @@ public class MyListFragment extends ListFragment {
 		super.onStop();
 		getActivity().unregisterReceiver(receiver);
 	}
+	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		RssItem item = (RssItem) getListAdapter().getItem(position);
 		updateDetail(item);
-	}
-
-	public void updateListContent() {
-		Intent intent = new Intent(getActivity(), RssDownloadService.class);
-		intent.putExtra("url", "http://www.vogella.com/article.rss");
-		getActivity().startService(intent);
 	}
 
 	public void setListContent(List<RssItem> result) {

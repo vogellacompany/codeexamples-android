@@ -31,6 +31,15 @@ public class MainActivity extends Activity implements ServiceConnection {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		textView = (TextView) findViewById(R.id.status);
+		Intent intent = new Intent(this, MeinService.class);
+		intent.putExtra("tuet", true);
+		startService(intent);
+		startService(intent);
+		startService(intent);
+		startService(intent);
+		startService(intent);
+		startService(intent);
+		stopService(intent);
 	}
 	
 	
