@@ -13,8 +13,6 @@ import android.view.MenuItem;
 public class RssfeedActivity extends Activity implements
 		MyListFragment.OnItemSelectedListener {
 
-	private static final String HEADLESS = "HEADLESS";
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
