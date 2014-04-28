@@ -11,7 +11,6 @@ public class DetailActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Application application = getApplication();
 
 		// Need to check if Activity has been switched to landscape mode
 		// If yes, finished and go back to the start Activity
