@@ -8,22 +8,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <EditText
+        android:id="@+id/main_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:ems="10" >
 
-    <!--
-        NOTE: More attributes are required 
-        for the correct layout of the ImageView. These are feft 
-        out for brevity
-    -->
+        <requestFocus />
+    </EditText>
 
-    <ImageView
-        android:id="@+id/myicon"
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/initial" />
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="31dp"
+        android:onClick="onClick"
+        android:text="Start" />
 
 </RelativeLayout>

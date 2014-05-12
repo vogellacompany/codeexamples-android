@@ -3,7 +3,9 @@ package com.vogella.android.first;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -16,11 +18,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+	// you may have here an onCreateOptionsMenu method
+	// this method is not required for this exercise
+	// therefore I deleted it
 
+	public void onClick(View view) {
+		EditText input = (EditText) findViewById(R.id.main_input);
+		String string = input.getText().toString();
+		Toast.makeText(this, string, Toast.LENGTH_LONG).show();
+	}
 }
