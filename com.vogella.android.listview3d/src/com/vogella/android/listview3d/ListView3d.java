@@ -12,6 +12,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ListView;
 
+// See the original example at https://github.com/renard314/ListView3d
+
 public class ListView3d extends ListView {
 
 	/** Ambient light intensity */

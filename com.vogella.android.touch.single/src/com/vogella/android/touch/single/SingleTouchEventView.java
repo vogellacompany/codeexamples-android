@@ -6,11 +6,13 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 
 public class SingleTouchEventView extends View {
   private Paint paint = new Paint();
   private Path path = new Path();
+  private VelocityTracker mVelocityTracker;
 
   public SingleTouchEventView(Context context, AttributeSet attrs) {
     super(context, attrs);
@@ -35,12 +37,15 @@ public class SingleTouchEventView extends View {
     switch (event.getAction()) {
     case MotionEvent.ACTION_DOWN:
       path.moveTo(eventX, eventY);
+      mVelocityTracker = VelocityTracker.obtain();
+      mVelocityTracker.addMovement(event);
       return true;
     case MotionEvent.ACTION_MOVE:
+    
       path.lineTo(eventX, eventY);
       break;
     case MotionEvent.ACTION_UP:
-      // nothing to do
+      
       break;
     default:
       return false;

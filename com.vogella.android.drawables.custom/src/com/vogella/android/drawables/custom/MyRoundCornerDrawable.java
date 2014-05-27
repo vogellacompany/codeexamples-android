@@ -5,6 +5,7 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
@@ -33,17 +34,17 @@ public class MyRoundCornerDrawable extends Drawable {
 
 	@Override
 	public void setAlpha(int alpha) {
-
+		paint.setAlpha(alpha);
 	}
 
 	@Override
 	public void setColorFilter(ColorFilter cf) {
-
+		paint.setColorFilter(cf);
 	}
 
 	@Override
 	public int getOpacity() {
-		return 255;
+		return PixelFormat.TRANSLUCENT;
 	}
 
 }

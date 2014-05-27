@@ -37,12 +37,11 @@ public class StreamActivity extends Activity {
 		((ListView) findViewById(R.id.main_list)).setAdapter(adapter);
 
 		adapter.add(new StreamItem(this, R.drawable.splash1, "voclipse", "Custom Eclipse IDE"));
-		adapter.add(new StreamItem(this, R.drawable.photo2, "Starry night", "Lake Powell, AZ"));
-		adapter.add(new StreamItem(this, R.drawable.photo3, "Racetrack playa", "Death Valley, CA"));
-		adapter.add(new StreamItem(this, R.drawable.photo4, "Napali coast", "Kauai, HI"));
-		adapter.add(new StreamItem(this, R.drawable.photo5, "Delicate Arch", "Arches, UT"));
-		adapter.add(new StreamItem(this, R.drawable.photo6, "Sierra sunset", "Lone Pine, CA"));
-		adapter.add(new StreamItem(this, R.drawable.photo7, "Majestic", "Grand Teton, WY"));
+		adapter.add(new StreamItem(this, R.drawable.splash2, "Wizard", "vogella"));
+		adapter.add(new StreamItem(this, R.drawable.splash3, "Lars Vogel", "vogella GmbH"));
+		adapter.add(new StreamItem(this, R.drawable.splash4, "Example ", "More"));
+		adapter.add(new StreamItem(this, R.drawable.splash5, "Testing", "Help"));
+		adapter.add(new StreamItem(this, R.drawable.splash6, "Test ", "Testing, "));
 	}
 
 	class StreamItem {

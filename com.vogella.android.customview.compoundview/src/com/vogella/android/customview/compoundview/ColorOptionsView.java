@@ -15,7 +15,6 @@ import com.vogella.android.view.compoundview.R;
 public class ColorOptionsView extends LinearLayout {
 
 	private View mValue;
-	private ImageView mImage;
 
 	public ColorOptionsView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -50,8 +49,5 @@ public class ColorOptionsView extends LinearLayout {
 		mValue.setBackgroundColor(color);
 	}
 
-	public void setImageVisible(boolean visible) {
-		mImage.setVisibility(visible ? View.VISIBLE : View.GONE);
-	}
 
 }

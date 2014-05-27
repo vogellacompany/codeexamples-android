@@ -19,7 +19,6 @@
         android:background="#808080"
         android:dividerPadding="11dp"
         android:padding="4dp"
-        android:visibility="gone" 
         >
 
         <TextView
