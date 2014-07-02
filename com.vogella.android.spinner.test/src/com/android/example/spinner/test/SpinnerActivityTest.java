@@ -77,7 +77,7 @@ public class SpinnerActivityTest extends
 	}
 
 	@UiThreadTest
-	public void testStateTerminate() {
+	public void terminationShouldPreserveInstanceState() {
 		mActivity.setSpinnerPosition(TEST_STATE_DESTROY_POSITION);
 		mActivity.setSpinnerSelection(TEST_STATE_DESTROY_SELECTION);
 
@@ -93,7 +93,7 @@ public class SpinnerActivityTest extends
 	}
 
 	@UiThreadTest
-	public void testStatePause() {
+	public void pauseShouldPreserveInstanceState() {
 		Instrumentation mInstr = this.getInstrumentation();
 		mActivity.setSpinnerPosition(TEST_STATE_PAUSE_POSITION);
 		mActivity.setSpinnerSelection(TEST_STATE_PAUSE_SELECTION);

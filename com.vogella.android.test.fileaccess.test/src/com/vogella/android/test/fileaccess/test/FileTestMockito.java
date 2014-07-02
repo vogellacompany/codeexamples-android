@@ -25,6 +25,7 @@ public class FileTestMockito extends InstrumentationTestCase {
 		super.setUp();
 		System.setProperty("dexmaker.dexcache", getInstrumentation()
 				.getTargetContext().getCacheDir().toString());
+		// Initialize the mock
 		MockitoAnnotations.initMocks(this);
 	};
 

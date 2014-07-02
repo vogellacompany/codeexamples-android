@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>com.vogella.android.test.renamingdelegationcontext.test</name>
+	<name>com.vogella.android.spinner.test.withespresso</name>
 	<comment></comment>
 	<projects>
-		<project>com.vogella.android.test.renamingdelegationcontext</project>
+		<project>com.vogella.android.spinner</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

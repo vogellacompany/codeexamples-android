@@ -17,9 +17,9 @@ public class FileTest extends TestCase {
 	public int fileWrites = 0;
 	
 
-	public class MockOutputStream extends FileOutputStream {
+	public class StubOutputStream extends FileOutputStream {
 
-		public MockOutputStream() throws FileNotFoundException {
+		public StubOutputStream() throws FileNotFoundException {
 			super(FileDescriptor.out);
 		}
 
@@ -34,14 +34,14 @@ public class FileTest extends TestCase {
 	MockContext context = new MockContext() {
 		public java.io.FileOutputStream openFileOutput(String name, int mode)
 				throws java.io.FileNotFoundException {
-			return new MockOutputStream();
+			return new StubOutputStream();
 		};
 
 	};
 
 	
 
-	public void testFileApplication() {
+	public void testWriteConfigurationShouldAccessFileSystemTwice() {
 		assertEquals("No file writes yet", fileWrites, 0);
 		Util.writeConfiguration(context);
 		assertEquals("Failed to write twice", 2, fileWrites);
