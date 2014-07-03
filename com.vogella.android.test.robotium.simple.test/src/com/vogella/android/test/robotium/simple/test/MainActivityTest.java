@@ -3,7 +3,8 @@ package com.vogella.android.test.robotium.simple.test;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
 
-import com.jayway.android.robotium.solo.Solo;
+import com.robotium.solo.Solo;
+
 import com.vogella.android.test.robotium.simple.MainActivity;
 import com.vogella.android.test.robotium.simple.NextActivity;
 
@@ -25,15 +26,15 @@ public class MainActivityTest extends
 		solo.finishOpenedActivities();
 	}
 
-	public void testExercise01() throws Exception {
-		// Check that we have the right activity
+	public void testButtonClickShouldUpdateText() throws Exception {
+		// check that we have the right activity
 		solo.assertCurrentActivity("wrong activity", MainActivity.class);
 		solo.clickOnButton("Update Text");
 		solo.searchText("Current time");
 	}
 
-	public void testExercise02() throws Exception {
-		// Check that we have the right activity
+	public void testStartSecondActivity() throws Exception {
+		// check that we have the right activity
 		solo.assertCurrentActivity("wrong activity", MainActivity.class);
 		solo.clickOnButton("Start Activity");
 		solo.assertCurrentActivity("wrong activity", NextActivity.class);

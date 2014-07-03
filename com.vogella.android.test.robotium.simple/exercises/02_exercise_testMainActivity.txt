@@ -1,9 +1,4 @@
-Write a RobotiumTest which tests the following
+Use the "MainActivityTest.java" template from "template" folder to create a new RobotiumTest 
 
-Starting Activity is MainActivity
-Press "Update Text" and validate that the user interface 
-contains a value starting "Current"
-
-If "Start Activity" is pressed, the second activity starts
-
-If you find errors in the application under test, fix them
+Implement the testButtonClickShouldUpdateText test. Click on the button and search 
+for the "Current time" text with the solo class.
