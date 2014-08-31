@@ -15,7 +15,6 @@ import org.mockito.MockitoAnnotations;
 public class FileTest extends TestCase {
 	
 	public int fileWrites = 0;
-	
 
 	public class StubOutputStream extends FileOutputStream {
 
@@ -23,24 +22,19 @@ public class FileTest extends TestCase {
 			super(FileDescriptor.out);
 		}
 
-		// Count number of calls
+		// count number of calls
 		@Override
 		public void write(byte[] buffer) throws IOException {
 			fileWrites++;
 		}
-
 	}
-
 	MockContext context = new MockContext() {
 		public java.io.FileOutputStream openFileOutput(String name, int mode)
 				throws java.io.FileNotFoundException {
 			return new StubOutputStream();
 		};
-
 	};
-
 	
-
 	public void testWriteConfigurationShouldAccessFileSystemTwice() {
 		assertEquals("No file writes yet", fileWrites, 0);
 		Util.writeConfiguration(context);

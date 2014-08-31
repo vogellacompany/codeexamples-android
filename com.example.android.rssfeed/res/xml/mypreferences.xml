@@ -5,5 +5,6 @@
         android:key="url"
         android:title="Rss feed URL" 
         android:inputType="textUri"/>
+    <CheckBoxPreference android:title="Aktiv" android:key="active"/>
 
 </PreferenceScreen>

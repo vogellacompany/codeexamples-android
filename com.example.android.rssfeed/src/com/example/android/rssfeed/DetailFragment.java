@@ -19,7 +19,10 @@ public class DetailFragment extends Fragment {
 	}
 
 	public void setText(String item) {
+		// Set the scale factor
 		webview.setInitialScale(50);
+		webview.getSettings().setBuiltInZoomControls(true);
+		webview.getSettings().setSupportZoom(true);
 		webview.loadUrl(item);
 	}
 }

@@ -12,11 +12,6 @@ import com.android.example.spinner.SpinnerActivity;
 
 public class SpinnerActivityTest extends
 		ActivityInstrumentationTestCase2<SpinnerActivity> {
-	public static final int TEST_STATE_DESTROY_POSITION = 2;
-	public static final String TEST_STATE_DESTROY_SELECTION = "Earth";
-
-	public static final int TEST_STATE_PAUSE_POSITION = 4;
-	public static final String TEST_STATE_PAUSE_SELECTION = "Jupiter";
 
 	private SpinnerActivity mActivity;
 	private Spinner mSpinner;
@@ -43,9 +38,50 @@ public class SpinnerActivityTest extends
 
 	public void testPreConditions() {
 		assertTrue(mSpinner.getOnItemSelectedListener() != null);
-		assertTrue(mPlanetData != null);
+		assertNotNull(mPlanetData);
 		assertTrue(mPlanetData.getCount() > 0);
 	} // end of testPreConditions() method definition
+
+	public static final int TEST_STATE_DESTROY_POSITION = 2;
+	public static final String TEST_STATE_DESTROY_SELECTION = "Earth";
+
+	public static final int TEST_STATE_PAUSE_POSITION = 4;
+	public static final String TEST_STATE_PAUSE_SELECTION = "Jupiter";
+	
+	@UiThreadTest
+	public void testTerminationShouldPreserveInstanceState() {
+		mActivity.setSpinnerPosition(TEST_STATE_DESTROY_POSITION);
+		mActivity.setSpinnerSelection(TEST_STATE_DESTROY_SELECTION);
+
+		mActivity.finish();
+		// Restart
+		mActivity = this.getActivity();
+
+		int currentPosition = mActivity.getSpinnerPosition();
+		String currentSelection = mActivity.getSpinnerSelection();
+		assertEquals(TEST_STATE_DESTROY_POSITION, currentPosition);
+		assertEquals(TEST_STATE_DESTROY_SELECTION, currentSelection);
+
+	}
+
+	@UiThreadTest
+	public void testPauseShouldPreserveInstanceState() {
+		Instrumentation mInstr = this.getInstrumentation();
+		mActivity.setSpinnerPosition(TEST_STATE_PAUSE_POSITION);
+		mActivity.setSpinnerSelection(TEST_STATE_PAUSE_SELECTION);
+
+		//
+		mInstr.callActivityOnPause(mActivity);
+		mActivity.setSpinnerPosition(0);
+		mActivity.setSpinnerSelection("");
+
+		mInstr.callActivityOnResume(mActivity);
+		int currentPosition = mActivity.getSpinnerPosition();
+		String currentSelection = mActivity.getSpinnerSelection();
+
+		assertEquals(TEST_STATE_PAUSE_POSITION, currentPosition);
+		assertEquals(TEST_STATE_PAUSE_SELECTION, currentSelection);
+	}
 
 	public void testSpinnerSelection() {
 		mActivity.runOnUiThread(new Runnable() {
@@ -75,40 +111,4 @@ public class SpinnerActivityTest extends
 
 		assertEquals(resultText, mSelection);
 	}
-
-	@UiThreadTest
-	public void terminationShouldPreserveInstanceState() {
-		mActivity.setSpinnerPosition(TEST_STATE_DESTROY_POSITION);
-		mActivity.setSpinnerSelection(TEST_STATE_DESTROY_SELECTION);
-
-		mActivity.finish();
-		// Restart
-		mActivity = this.getActivity();
-
-		int currentPosition = mActivity.getSpinnerPosition();
-		String currentSelection = mActivity.getSpinnerSelection();
-		assertEquals(TEST_STATE_DESTROY_POSITION, currentPosition);
-		assertEquals(TEST_STATE_DESTROY_SELECTION, currentSelection);
-
-	}
-
-	@UiThreadTest
-	public void pauseShouldPreserveInstanceState() {
-		Instrumentation mInstr = this.getInstrumentation();
-		mActivity.setSpinnerPosition(TEST_STATE_PAUSE_POSITION);
-		mActivity.setSpinnerSelection(TEST_STATE_PAUSE_SELECTION);
-
-		//
-		mInstr.callActivityOnPause(mActivity);
-		mActivity.setSpinnerPosition(0);
-		mActivity.setSpinnerSelection("");
-
-		mInstr.callActivityOnResume(mActivity);
-		int currentPosition = mActivity.getSpinnerPosition();
-		String currentSelection = mActivity.getSpinnerSelection();
-
-		assertEquals(TEST_STATE_PAUSE_POSITION, currentPosition);
-		assertEquals(TEST_STATE_PAUSE_SELECTION, currentSelection);
-	}
-
 }

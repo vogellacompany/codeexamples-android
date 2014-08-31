@@ -16,7 +16,6 @@ public class RssApplication extends Application {
 	}
 	@Override
 	public void onTrimMemory(int level) {
-		// TODO Auto-generated method stub
 		super.onTrimMemory(level);
 	}
 	

@@ -14,14 +14,6 @@ public class ConverterUtitJUnit4 {
 		super();
 	}
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
 	public void testConvertFahrenheitToCelsius() {
 		float actual = ConverterUtil.convertCelsiusToFahrenheit(100);

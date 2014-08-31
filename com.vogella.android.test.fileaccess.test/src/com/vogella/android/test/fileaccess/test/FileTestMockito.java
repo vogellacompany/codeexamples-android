@@ -1,6 +1,8 @@
 package com.vogella.android.test.fileaccess.test;
 
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,6 +22,9 @@ public class FileTestMockito extends InstrumentationTestCase {
 
 	@Mock
 	Context context;
+	
+	@Mock
+	FileOutputStream mock;
 
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -31,15 +36,14 @@ public class FileTestMockito extends InstrumentationTestCase {
 
 	public void testFileApplication() {
 
-		FileOutputStream mock = Mockito.mock(FileOutputStream.class);
 		try {
 			
 			when(context.openFileOutput(Mockito.anyString(), Mockito.anyInt())).thenReturn(
 					mock);
-			Mockito.verify(mock, Mockito.times(0)).write(Mockito.anyByte());
+			verify(mock, Mockito.times(0)).write(Mockito.anyByte());
 			Util.writeConfiguration(context);
-			Mockito.verify(mock, Mockito.times(1)).write("This is a test1.".getBytes());
-			Mockito.verify(mock, Mockito.times(1)).write("This is a test2.".getBytes());
+			Mockito.verify(mock, Mockito.times(2)).write("This is a test1.".getBytes());
+//			Mockito.verify(mock, Mockito.times(1)).write("This is a test2.".getBytes());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
