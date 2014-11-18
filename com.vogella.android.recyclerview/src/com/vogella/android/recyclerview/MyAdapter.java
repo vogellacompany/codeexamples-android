@@ -15,15 +15,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 	private ArrayList<String> mDataset;
 
 	// Provide a reference to the views for each data item
+	// Complex data items may need more than one view per item, and
+	// you provide access to all the views for a data item in a view holder
 	public class ViewHolder extends RecyclerView.ViewHolder {
 		// each data item is just a string in this case
-		public TextView bigTextView;
-		public TextView smallTextView;
+		public TextView mTextView;
 
-		public ViewHolder(TextView big, TextView small) {
-			super(big);
-			bigTextView = big;
-			smallTextView = small;
+		public ViewHolder(TextView v) {
+			super(v);
+			mTextView = v;
 		}
 	}
 
@@ -48,10 +48,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 	public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
 			int viewType) {
 		// create a new view
-		View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.rowlayout, parent, false);
-		TextView  bigText = (TextView) v.findViewById(R.id.firstLine);
-		TextView  smallText = (TextView) v.findViewById(R.id.secondLine);
-		ViewHolder vh = new ViewHolder(bigText, smallText);
+		TextView v = (TextView) LayoutInflater.from(parent.getContext())
+				.inflate(R.layout.rowlayout, parent, false);
+		// set the view's size, margins, paddings and layout parameters
+		ViewHolder vh = new ViewHolder(v);
 		return vh;
 	}
 
@@ -61,14 +61,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 		// - get element from your dataset at this position
 		// - replace the contents of the view with that element
 		final String name = mDataset.get(position);
-		holder.bigTextView.setText(mDataset.get(position));
-		holder.bigTextView.setOnClickListener(new OnClickListener() {
+		holder.mTextView.setText(mDataset.get(position));
+		holder.mTextView.setOnClickListener(new OnClickListener() {
 		        @Override
 		        public void onClick(View v) {
 		        	remove(name);
 		        }
 		    });
-		holder.smallTextView.setText("Example data");
+
 	}
 
 	// Return the size of your dataset (invoked by the layout manager)
