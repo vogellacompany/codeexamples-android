@@ -4,6 +4,6 @@
         android:id="@+id/menu_settings"
         android:title="Fake Delete"
         android:orderInCategory="100"
-        android:showAsAction="never"/>
+        android:showAsAction="always"/>
 
 </menu>
