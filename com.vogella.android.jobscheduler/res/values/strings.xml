@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="finish_job_button_text">taskFinished</string>
+    <string name="charging_caption">Charging:</string>
+    <string name="charging_text">Requires device plugged in.</string>
+    <string name="idle_caption">Idle:</string>
+    <string name="constraints">Constraints</string>
+    <string name="connectivity">Connectivity:</string>
+    <string name="any">Any</string>
+    <string name="unmetered">WiFi</string>
+    <string name="timing">Timing:</string>
+    <string name="delay">Delay:</string>
+
+   
+
+</resources>

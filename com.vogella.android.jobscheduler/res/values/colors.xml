@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="none_received">#999999</color>
+    <color name="start_received">#00FF00</color>
+    <color name="stop_received">#FF0000</color>
+</resources>
