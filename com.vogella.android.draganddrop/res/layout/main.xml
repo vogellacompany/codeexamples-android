@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:columnWidth="320dp"
+    android:orientation="vertical"
+    android:rowCount="2"
+    android:stretchMode="columnWidth" >
+
+    <LinearLayout
+        android:id="@+id/topleft"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_row="0"
+        android:background="@drawable/shape" >
+
+        <ImageView
+            android:id="@+id/myimage1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topright"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/shape" >
+
+        <ImageView
+            android:id="@+id/myimage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomleft"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/shape" >
+
+        <ImageView
+            android:id="@+id/myimage3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomright"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/shape" >
+
+        <ImageView
+            android:id="@+id/myimage4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+</GridLayout>
