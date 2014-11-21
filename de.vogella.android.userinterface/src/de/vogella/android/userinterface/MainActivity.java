@@ -1,6 +1,7 @@
 package de.vogella.android.userinterface;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,11 +24,13 @@ public class MainActivity extends Activity {
 	}
 
 	public void onClick(View view) {
-		final View photo = findViewById(R.id.editablePhoto1);
+		final RoundImageView photo = (RoundImageView)  findViewById(R.id.editablePhoto1);
 		final View progress = findViewById(R.id.progressBar1);
 		progress.setVisibility(View.VISIBLE);
 		refreshButton.setVisibility(View.GONE);
 		Runnable runnable = new Runnable() {
+
+			private Bitmap decodeStream;
 
 			@Override
 			public void run() {
@@ -36,23 +39,25 @@ public class MainActivity extends Activity {
 				} catch (InterruptedException e1) {
 					e1.printStackTrace();
 				}
+				decodeStream = null;
+				try {
+					if (photo != null
+							&& photo instanceof RoundImageView) {
+						decodeStream = BitmapFactory
+								.decodeStream(getAssets().open(
+										"lars.png"));
+					}
+
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				handler.post(new Runnable() {
 					@Override
 					public void run() {
-						try {
-							if (photo != null
-									&& photo instanceof RoundImageView) {
-								RoundImageView photo2 = (RoundImageView) photo;
-								photo2.setImageBitmap(BitmapFactory
-										.decodeStream(getAssets().open(
-												"lars.png")));
-							}
-
-							progress.setVisibility(View.GONE);
-							refreshButton.setVisibility(View.VISIBLE);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
+						photo.setImageBitmap(decodeStream);
+						progress.setVisibility(View.GONE);
+						refreshButton.setVisibility(View.VISIBLE);
 					}
 				});
 
