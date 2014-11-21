@@ -46,8 +46,10 @@ public class MainActivity extends Activity {
 		viewContainer.setVisibility(View.GONE);
 	}
 
-	public static void showUndo(final View viewContainer) {
-		// TODO show value with end action
+	public  void showUndo(final View viewContainer) {
+		View view = findViewById(R.id.undobar);
+		view.setVisibility(View.VISIBLE);
+
 
 	}
 
