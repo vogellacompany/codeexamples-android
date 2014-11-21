@@ -13,71 +13,71 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-public class DragActivity extends Activity {
+public class DragActivity extends Activity implements OnDragListener {
+	private Drawable enterShape;
+	private Drawable normalShape;
+	OnTouchListener dragListener = new OnTouchListener() {
+		@Override
+		public boolean onTouch(View view, MotionEvent motionEvent) {
+			// start move on a touch event
+			if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+				ClipData data = ClipData.newPlainText("", "");
+				DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+				view.startDrag(data, shadowBuilder, view, 0);
+				view.setVisibility(View.INVISIBLE);
+				return true;
+			}
+			return false;
+
+		}
+	};
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		findViewById(R.id.myimage1).setOnTouchListener(new MyTouchListener());
-		findViewById(R.id.myimage2).setOnTouchListener(new MyTouchListener());
-		findViewById(R.id.myimage3).setOnTouchListener(new MyTouchListener());
-		findViewById(R.id.myimage4).setOnTouchListener(new MyTouchListener());
 
-		findViewById(R.id.topleft).setOnDragListener(new MyDragListener());
-		findViewById(R.id.topright).setOnDragListener(new MyDragListener());
-		findViewById(R.id.bottomleft).setOnDragListener(new MyDragListener());
-		findViewById(R.id.bottomright).setOnDragListener(new MyDragListener());
+		enterShape = getResources().getDrawable(R.drawable.shape_droptarget);
+		normalShape = getResources().getDrawable(R.drawable.shape);
+
+		findViewById(R.id.myimage1).setOnTouchListener(dragListener);
+		findViewById(R.id.myimage2).setOnTouchListener(dragListener);
+		findViewById(R.id.myimage3).setOnTouchListener(dragListener);
+		findViewById(R.id.myimage4).setOnTouchListener(dragListener);
+
+		findViewById(R.id.topleft).setOnDragListener(this);
+		findViewById(R.id.topright).setOnDragListener(this);
+		findViewById(R.id.bottomleft).setOnDragListener(this);
+		findViewById(R.id.bottomright).setOnDragListener(this);
 
 	}
 
-	private final class MyTouchListener implements OnTouchListener {
-		public boolean onTouch(View view, MotionEvent motionEvent) {
-			if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-				ClipData data = ClipData.newPlainText("", "");
-				DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(
-						view);
-				view.startDrag(data, shadowBuilder, view, 0);
-				view.setVisibility(View.INVISIBLE);
-				return true;
-			} else {
-				return false;
-			}
+	@Override
+	public boolean onDrag(View v, DragEvent event) {
+		switch (event.getAction()) {
+		case DragEvent.ACTION_DRAG_STARTED:
+			// Do nothing
+			break;
+		case DragEvent.ACTION_DRAG_ENTERED:
+			v.setBackground(enterShape);
+			break;
+		case DragEvent.ACTION_DRAG_EXITED:
+			v.setBackground(normalShape);
+			break;
+		case DragEvent.ACTION_DROP:
+			// view dropped, reassign the view to the new ViewGroup
+			View view = (View) event.getLocalState();
+			ViewGroup owner = (ViewGroup) view.getParent();
+			owner.removeView(view);
+			LinearLayout container = (LinearLayout) v;
+			container.addView(view);
+			view.setVisibility(View.VISIBLE);
+			break;
+		case DragEvent.ACTION_DRAG_ENDED:
+			v.setBackground(normalShape);
+		default:
+			break;
 		}
-	}
-
-	class MyDragListener implements OnDragListener {
-		Drawable enterShape = getResources().getDrawable(
-				R.drawable.shape_droptarget);
-		Drawable normalShape = getResources().getDrawable(R.drawable.shape);
-
-		@Override
-		public boolean onDrag(View v, DragEvent event) {
-			int action = event.getAction();
-			switch (event.getAction()) {
-			case DragEvent.ACTION_DRAG_STARTED:
-				// Do nothing
-				break;
-			case DragEvent.ACTION_DRAG_ENTERED:
-				v.setBackgroundDrawable(enterShape);
-				break;
-			case DragEvent.ACTION_DRAG_EXITED:
-				v.setBackgroundDrawable(normalShape);
-				break;
-			case DragEvent.ACTION_DROP:
-				// Dropped, reassign View to ViewGroup
-				View view = (View) event.getLocalState();
-				ViewGroup owner = (ViewGroup) view.getParent();
-				owner.removeView(view);
-				LinearLayout container = (LinearLayout) v;
-				container.addView(view);
-				view.setVisibility(View.VISIBLE);
-				break;
-			case DragEvent.ACTION_DRAG_ENDED:
-				v.setBackgroundDrawable(normalShape);
-			default:
-				break;
-			}
-			return true;
-		}
+		return true;
 	}
 }
