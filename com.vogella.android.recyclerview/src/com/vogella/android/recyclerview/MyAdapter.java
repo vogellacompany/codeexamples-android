@@ -1,7 +1,6 @@
 package com.vogella.android.recyclerview;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +9,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
-		implements View.OnClickListener {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 	private ArrayList<String> mDataset;
 
 	// Provide a reference to the views for each data item
@@ -19,11 +17,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 	// you provide access to all the views for a data item in a view holder
 	public class ViewHolder extends RecyclerView.ViewHolder {
 		// each data item is just a string in this case
-		public TextView mTextView;
+		public TextView txtHeader;
+		public TextView txtFooter;
 
-		public ViewHolder(TextView v) {
+		public ViewHolder(View v) {
 			super(v);
-			mTextView = v;
+			txtHeader = (TextView) v.findViewById(R.id.firstLine);
+			txtFooter = (TextView) v.findViewById(R.id.secondLine);
 		}
 	}
 
@@ -48,8 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 	public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
 			int viewType) {
 		// create a new view
-		TextView v = (TextView) LayoutInflater.from(parent.getContext())
-				.inflate(R.layout.rowlayout, parent, false);
+		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowlayout, parent, false);
 		// set the view's size, margins, paddings and layout parameters
 		ViewHolder vh = new ViewHolder(v);
 		return vh;
@@ -61,13 +60,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 		// - get element from your dataset at this position
 		// - replace the contents of the view with that element
 		final String name = mDataset.get(position);
-		holder.mTextView.setText(mDataset.get(position));
-		holder.mTextView.setOnClickListener(new OnClickListener() {
+		holder.txtHeader.setText(mDataset.get(position));
+		holder.txtHeader.setOnClickListener(new OnClickListener() {
 		        @Override
 		        public void onClick(View v) {
 		        	remove(name);
 		        }
 		    });
+		
+		holder.txtFooter.setText("Footer: " + mDataset.get(position));
 
 	}
 
@@ -77,8 +78,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 		return mDataset.size();
 	}
 
-	@Override
-	public void onClick(View v) {
-
-	}
 }
