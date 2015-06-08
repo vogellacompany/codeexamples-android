@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Temperature Converter</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <color name="myColor">#F5F5F5</color>
+    <string name="celsius">to Celsius</string>
+    <string name="fahrenheit">to Fahrenheit</string>
+    <string name="calc">Calculate</string>
+
+</resources>
