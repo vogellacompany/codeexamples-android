@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        text = (EditText) findViewById(R.id.editText1);
+        text = (EditText) findViewById(R.id.inputValue);
 
     }
 
