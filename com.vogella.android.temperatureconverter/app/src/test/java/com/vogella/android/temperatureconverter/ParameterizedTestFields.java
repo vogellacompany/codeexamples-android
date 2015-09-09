@@ -16,31 +16,25 @@ public class ParameterizedTestFields {
 
     // fields used together with @Parameter must be public
     @Parameter
-    public int m1;
+    public float m1;
     @Parameter (value = 1)
-    public int m2;
+    public float m2;
 
 
     // creates the test data
     @Parameters
     public static Collection<Object[]> data() {
-        Object[][] data = new Object[][] { { 1 , 2 }, { 5, 3 }, { 121, 4 } };
+        Object[][] data = new Object[][] { { 46.4f , 8f }, { 5f, -15f }, { 24f, -4.44444465637207f } };
         return Arrays.asList(data);
     }
 
 
     @Test
     public void testMultiplyException() {
-        MyClass tester = new MyClass();
-        assertEquals("Result", m1 * m2, tester.multiply(m1, m2));
+        float actual = ConverterUtil.convertFahrenheitToCelsius(m1);
+        assertEquals("Result", m2, actual, 0.001);
     }
 
 
-    // class to be tested
-    class MyClass {
-        public int multiply(int i, int j) {
-            return i *j;
-        }
-    }
 
 }

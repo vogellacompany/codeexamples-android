@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-        ConverterTest.class
+        ConverterUtilTest.class
 })
 
 public class AllTests {
