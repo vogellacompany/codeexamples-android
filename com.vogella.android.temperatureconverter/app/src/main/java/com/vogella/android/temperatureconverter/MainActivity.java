@@ -46,5 +46,4 @@ public class MainActivity extends Activity {
                 break;
         }
     }
-
 }

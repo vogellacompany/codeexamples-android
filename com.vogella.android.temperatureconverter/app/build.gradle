@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
-android {
-    compileSdkVersion 22
-    buildToolsVersion '23.0.0 rc2'
 
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
     defaultConfig {
         applicationId "com.vogella.android.temperatureconverter"
-        minSdkVersion 22
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -17,7 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
