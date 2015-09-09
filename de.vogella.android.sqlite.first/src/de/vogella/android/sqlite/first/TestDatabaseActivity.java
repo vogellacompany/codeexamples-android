@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
+// Adding another version
+
 public class TestDatabaseActivity extends ListActivity {
 	private CommentsDataSource datasource;
 
@@ -17,6 +19,7 @@ public class TestDatabaseActivity extends ListActivity {
 		setContentView(R.layout.main);
 
 		datasource = new CommentsDataSource(this);
+		datasource.open(); // This line was missing and caused runtime error due to null object
 
 		List<Comment> values = datasource.getAllComments();
 
@@ -32,7 +35,7 @@ public class TestDatabaseActivity extends ListActivity {
 	public void onClick(View view) {
 		@SuppressWarnings("unchecked")
 		ArrayAdapter<Comment> adapter = (ArrayAdapter<Comment>) getListAdapter();
-		Comment comment = null;
+		Comment comment;
 		switch (view.getId()) {
 		case R.id.add:
 			String[] comments = new String[] { "Cool", "Very nice", "Hate it" };
