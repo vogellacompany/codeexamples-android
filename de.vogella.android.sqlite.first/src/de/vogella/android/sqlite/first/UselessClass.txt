@@ -1,0 +1,2 @@
+// This is useless class
+// New in Branch3 only
