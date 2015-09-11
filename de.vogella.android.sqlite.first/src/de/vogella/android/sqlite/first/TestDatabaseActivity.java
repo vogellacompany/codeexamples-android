@@ -17,6 +17,7 @@ public class TestDatabaseActivity extends ListActivity {
 		setContentView(R.layout.main);
 
 		datasource = new CommentsDataSource(this);
+		datasource.open();
 
 		List<Comment> values = datasource.getAllComments();
 
