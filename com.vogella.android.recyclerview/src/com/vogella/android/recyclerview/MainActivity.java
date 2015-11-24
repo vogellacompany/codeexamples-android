@@ -31,14 +31,13 @@ public class MainActivity extends Activity {
 		//	RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
 		//	recyclerView.addItemDecoration(itemDecoration);
 
-		ArrayList<String> input = new ArrayList<String>();
+		ArrayList<String> values = new ArrayList<String>();
 		for (int i = 0; i < 100; i++) {
-			input.add("Test" + i);
+			values.add("Test" + i);
 		}
 
 		// specify an adapter (see also next example)
-		mAdapter = new MyAdapter(input);
+		mAdapter = new MyAdapter(values);
 		recyclerView.setAdapter(mAdapter);
-		mAdapter.remove("Test1");
 	}
 }
