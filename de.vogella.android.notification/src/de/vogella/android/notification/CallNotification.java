@@ -48,7 +48,7 @@ public class CallNotification extends Activity {
 			Intent intent = new Intent(this, TargetActivity.class);
 			PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
 					intent, PendingIntent.FLAG_CANCEL_CURRENT);
-			notification.contentIntent = intent;
+			notification.contentIntent = pendingIntent;
 			notificationManager.notify(0, notification);
 
 			// Wir simulieren mal eine lange Aktion
