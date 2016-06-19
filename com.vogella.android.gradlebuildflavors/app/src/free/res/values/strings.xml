@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Gradle build flavors</string>
-
-    <string name="hello_world">Hello free!</string>
-    <string name="action_settings">Settings</string>
-</resources>
