@@ -50,6 +50,8 @@ dependencies {
     testCompile "org.powermock:powermock-module-junit4:$powerMockito"
     testCompile "org.powermock:powermock-api-mockito:$powerMockito"
     testCompile 'com.google.dagger:dagger:2.4'
+    testCompile 'com.android.support:support-annotations:23.0.0'
+
     compile 'com.google.dagger:dagger:2.4'
     apt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
     testApt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"

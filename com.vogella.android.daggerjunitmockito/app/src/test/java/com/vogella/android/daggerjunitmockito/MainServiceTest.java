@@ -25,7 +25,10 @@ public class MainServiceTest {
 
     @Test
     public void testDoSomething() {
+
+
         when(restService.getSomething()).thenReturn("abc");
+
 
         mainService.doSomething();
 

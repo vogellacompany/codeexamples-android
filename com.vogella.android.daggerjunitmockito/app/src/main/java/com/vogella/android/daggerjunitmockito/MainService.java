@@ -11,14 +11,21 @@ public class MainService {
     private MyPrinter printer;
 
     @Inject
-    public MainService(RestService restService,
-                       MyPrinter printer) {
+    public MainService(RestService restService,  MyPrinter printer) {
         this.restService = restService;
         this.printer = printer;
     }
 
     public void doSomething() {
+        if (restService == null) {
+           System.out.println("restService not allowed to be null");
+        }
         String s = restService.getSomething();
+        System.out.println(s);
+        if (printer == null) {
+            System.out.println("printer not allowed to be null");
+        }
+
         printer.print(s.toUpperCase());
     }
 }
