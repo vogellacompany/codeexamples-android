@@ -28,18 +28,16 @@ import static org.junit.Assert.assertThat;
 public class SecondActivityTest {
 
     @Rule
-   public ActivityTestRule<SecondActivity> rule  = new  ActivityTestRule<SecondActivity>(SecondActivity.class) ;
-//    {
-//        @Override
-//        protected Intent getActivityIntent() {
-//            InstrumentationRegistry.getTargetContext();
-//            Intent intent = new Intent(Intent.ACTION_MAIN);
-//            intent.putExtra("MYKEY", "Hello");
-//            return intent;
-//        }
-
-
-//    };
+   public ActivityTestRule<SecondActivity> rule  = new  ActivityTestRule<SecondActivity>(SecondActivity.class)
+    {
+        @Override
+        protected Intent getActivityIntent() {
+            InstrumentationRegistry.getTargetContext();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.putExtra("MYKEY", "Hello");
+            return intent;
+        }
+    };
 
     @Test
     public void ensureIntentDataIsDisplayed() throws Exception {
@@ -50,7 +48,6 @@ public class SecondActivityTest {
         assertThat(viewById,notNullValue());
         assertThat(viewById, instanceOf(TextView.class));
         TextView textView = (TextView) viewById;
-//        InstrumentationRegistry.getTargetContext().wait(10000);
-        assertThat(textView.getEditableText().toString(),is("Hello"));
+        assertThat(textView.getText().toString(),is("Hello"));
     }
 }
