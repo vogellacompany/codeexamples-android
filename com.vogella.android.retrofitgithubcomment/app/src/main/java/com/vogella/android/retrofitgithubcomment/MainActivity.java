@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     GithubAPI githubAPI;
     String credentials = Credentials.basic("aUsername", "aPassword");
 
-    Spinner issuesIdSpinner;
+    Spinner issuesSpinner;
     EditText commentEditText;
     Button sendButton;
 
@@ -43,15 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
         sendButton = (Button) findViewById(R.id.send_comment_button);
 
-        issuesIdSpinner = (Spinner) findViewById(R.id.issues_spinner);
-        issuesIdSpinner.setEnabled(false);
+        issuesSpinner = (Spinner) findViewById(R.id.issues_spinner);
+        issuesSpinner.setEnabled(false);
 
         commentEditText = (EditText) findViewById(R.id.comment_edittext);
 
-        createRetrofitClient();
+        createGithubAPI();
     }
 
-    private void createRetrofitClient() {
+    private void createGithubAPI() {
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
                 .create();
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.send_comment_button:
                 String newComment = commentEditText.getText().toString();
                 if (!newComment.isEmpty()) {
-                    GithubIssue selectedItem = (GithubIssue) issuesIdSpinner.getSelectedItem();
+                    GithubIssue selectedItem = (GithubIssue) issuesSpinner.getSelectedItem();
                     selectedItem.setComment(newComment);
                     Call<ResponseBody> postComment = githubAPI.postComment(selectedItem.getCommentsUrl(), selectedItem);
                     postComment.enqueue(comment);
@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
                 List<GithubIssue> issuesList = response.body();
                 GithubIssue[] idArray = issuesList.toArray(new GithubIssue[issuesList.size()]);
                 ArrayAdapter<GithubIssue> spinnerAdapter = new ArrayAdapter<GithubIssue>(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, idArray);
-                issuesIdSpinner.setAdapter(spinnerAdapter);
+                issuesSpinner.setAdapter(spinnerAdapter);
 
-                issuesIdSpinner.setEnabled(true);
+                issuesSpinner.setEnabled(true);
                 commentEditText.setEnabled(true);
                 sendButton.setEnabled(true);
             } else {
