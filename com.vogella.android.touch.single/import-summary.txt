@@ -1,0 +1,94 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea/
+* .idea/com.vogella.android.touch.single.iml
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/workspace.xml
+* com.vogella.android.touch.single/
+* com.vogella.android.touch.single/.classpath
+* com.vogella.android.touch.single/.project
+* com.vogella.android.touch.single/.settings/
+* com.vogella.android.touch.single/.settings/org.eclipse.jdt.core.prefs
+* com.vogella.android.touch.single/AndroidManifest.xml
+* com.vogella.android.touch.single/ic_launcher-web.png
+* com.vogella.android.touch.single/libs/
+* com.vogella.android.touch.single/libs/android-support-v4.jar
+* com.vogella.android.touch.single/proguard-project.txt
+* com.vogella.android.touch.single/project.properties
+* com.vogella.android.touch.single/res/
+* com.vogella.android.touch.single/res/drawable-hdpi/
+* com.vogella.android.touch.single/res/drawable-hdpi/ic_launcher.png
+* com.vogella.android.touch.single/res/drawable-ldpi/
+* com.vogella.android.touch.single/res/drawable-ldpi/ic_launcher.png
+* com.vogella.android.touch.single/res/drawable-mdpi/
+* com.vogella.android.touch.single/res/drawable-mdpi/ic_launcher.png
+* com.vogella.android.touch.single/res/drawable-xhdpi/
+* com.vogella.android.touch.single/res/drawable-xhdpi/ic_launcher.png
+* com.vogella.android.touch.single/res/layout/
+* com.vogella.android.touch.single/res/layout/activity_single_touch.xml
+* com.vogella.android.touch.single/res/menu/
+* com.vogella.android.touch.single/res/menu/activity_single_touch.xml
+* com.vogella.android.touch.single/res/values-v11/
+* com.vogella.android.touch.single/res/values-v11/styles.xml
+* com.vogella.android.touch.single/res/values-v14/
+* com.vogella.android.touch.single/res/values-v14/styles.xml
+* com.vogella.android.touch.single/res/values/
+* com.vogella.android.touch.single/res/values/strings.xml
+* com.vogella.android.touch.single/res/values/styles.xml
+* com.vogella.android.touch.single/src/
+* com.vogella.android.touch.single/src/com/
+* com.vogella.android.touch.single/src/com/vogella/
+* com.vogella.android.touch.single/src/com/vogella/android/
+* com.vogella.android.touch.single/src/com/vogella/android/touch/
+* com.vogella.android.touch.single/src/com/vogella/android/touch/single/
+* com.vogella.android.touch.single/src/com/vogella/android/touch/single/SingleTouchActivity.java
+* com.vogella.android.touch.single/src/com/vogella/android/touch/single/SingleTouchEventView.java
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
