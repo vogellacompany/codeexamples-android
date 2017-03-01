@@ -1,10 +1,22 @@
 package com.vogella.android.retrofitstackoverflow;
 
-// This is used to map the JSON keys to the object by GSON
+import com.google.gson.annotations.SerializedName;
+
 public class Question {
 
-    String title;
-    String link;
+    private String title;
+    private String link;
+
+    @SerializedName("question_id")
+    private String questionId;
+
+    public String getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(String questionId) {
+        this.questionId = questionId;
+    }
 
     @Override
     public String toString() {
