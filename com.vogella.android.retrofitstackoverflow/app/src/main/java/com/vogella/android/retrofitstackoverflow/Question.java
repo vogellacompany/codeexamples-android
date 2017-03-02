@@ -4,19 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class Question {
 
-    private String title;
-    private String link;
+    public String title;
+    public String body;
 
     @SerializedName("question_id")
-    private String questionId;
-
-    public String getQuestionId() {
-        return questionId;
-    }
-
-    public void setQuestionId(String questionId) {
-        this.questionId = questionId;
-    }
+    public String questionId;
 
     @Override
     public String toString() {

@@ -9,8 +9,6 @@ import android.webkit.WebViewClient;
 
 public class WebViewActivity extends Activity{
 
-	private static final String clientId = "yourClientId";
-	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +16,7 @@ public class WebViewActivity extends Activity{
         WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://stackexchange.com/oauth/dialog?client_id=" + clientId + "&scope=no_expiry,write_access&redirect_uri=https://stackexchange.com/oauth/login_success");
-
+        webView.loadUrl("https://stackexchange.com/oauth/dialog?client_id=" + getString(R.string.client_id) + "&scope=no_expiry,write_access&redirect_uri=https://stackexchange.com/oauth/login_success");
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -35,6 +32,5 @@ public class WebViewActivity extends Activity{
         });
 
         setContentView(webView);
-
     }
 }
