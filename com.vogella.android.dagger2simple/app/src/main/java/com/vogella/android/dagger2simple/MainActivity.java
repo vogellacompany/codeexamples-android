@@ -2,10 +2,7 @@ package com.vogella.android.dagger2simple;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import javax.inject.Inject;
 

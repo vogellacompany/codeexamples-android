@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Todo!</string>
+	<string name="app_name">Todo</string>
+	<string name="no_todos">Currently there are no Todo items maintained</string>
+	<string name="menu_insert">Add Item</string>
+	<string name="menu_delete">Delete Todo</string>
+	<string name="todo_summary">Summary</string>
+	<string name="todo_description">Delete Todo</string>
+	<string name="todo_edit_summary">Summary</string>
+	<string name="todo_edit_description">Description</string>
+	<string name="todo_edit_confirm">Confirm</string>
+</resources>

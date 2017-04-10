@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/actionitem_userdialog"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="Enter user"/>
+    <item
+        android:id="@+id/actionitem_alertdialog"
+        android:orderInCategory="80"
+        android:showAsAction="ifRoom"
+        android:title="Alert">
+    </item>
+
+</menu>

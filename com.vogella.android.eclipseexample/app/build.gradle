@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.vogella.android.eclipseexample"
+        minSdkVersion 25
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+}
+
+apply plugin: 'eclipse'
+
+eclipse {
+// pathVariables 'GRADLE_HOME': gradle.gradleUserHomeDir, "ANDROID_HOME": android.sdkDirectory
+    classpath {
+        plusConfigurations += [ configurations.compile, configurations.testCompile ]
+
+        file {
+            beforeMerged { classpath ->
+                classpath.entries.add(new org.gradle.plugins.ide.eclipse.model.SourceFolder("src/main/java", "bin"))
+                // Hardcoded to use debug configuration
+                classpath.entries.add(new org.gradle.plugins.ide.eclipse.model.SourceFolder("build/generated/source/r/debug", "bin"))
+                classpath.entries.add(new org.gradle.plugins.ide.eclipse.model.SourceFolder("build/generated/source/buildConfig/debug", "bin"))
+                classpath.entries.add(new org.gradle.plugins.ide.eclipse.model.SourceFolder("build/generated/source/aidl/debug", "bin"))
+            }
+
+            whenMerged { classpath ->
+                def aars = []
+                classpath.entries.each { dep ->
+                    if (dep.path.toString().endsWith(".aar")) {
+                        def explodedDir = new File(projectDir, "build/intermediates/exploded-aar/" + dep.moduleVersion.group + "/" + dep.moduleVersion.name + "/" + dep.moduleVersion.version + "/jars/")
+                        if (explodedDir.exists()) {
+                            explodedDir.eachFileRecurse(groovy.io.FileType.FILES) {
+                                if (it.getName().endsWith("jar")) {
+                                    def aarJar = new org.gradle.plugins.ide.eclipse.model.Library(fileReferenceFactory.fromFile(it))
+                                    aarJar.sourcePath = dep.sourcePath
+                                    aars.add(aarJar)
+                                }
+                            }
+                        } else {
+                            println "Warning: Missing " + explodedDir
+                        }
+                    }
+                }
+                classpath.entries.removeAll { it.path.endsWith(".aar") }
+                classpath.entries.addAll(aars)
+
+                def androidJar = new org.gradle.plugins.ide.eclipse.model.Variable(
+                        fileReferenceFactory.fromPath("ANDROID_HOME/platforms/" + android.compileSdkVersion + "/android.jar"))
+                androidJar.sourcePath = fileReferenceFactory.fromPath("ANDROID_HOME/sources/" + android.compileSdkVersion)
+                classpath.entries.add(androidJar)
+            }
+        }
+    }
+}
+
+eclipseClasspath.dependsOn "generateDebugSources"

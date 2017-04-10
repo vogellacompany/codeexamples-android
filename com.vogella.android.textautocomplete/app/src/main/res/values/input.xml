@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="android_versoins">
+        <item>API 25</item>
+        <item>API 24</item>
+        <item>API 23</item>
+        <item>API 22</item>
+        <item>API 21</item>
+        <item>API 20</item>
+    </array>
+</resources>

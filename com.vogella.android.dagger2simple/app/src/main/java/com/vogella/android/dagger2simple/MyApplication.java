@@ -1,3 +1,28 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     package com.vogella.android.dagger2simple;
 
     import android.app.Application;
@@ -11,6 +36,7 @@
         @Override
         public void onCreate() {
             super.onCreate();
+
             component = DaggerDiComponent.builder().build();
         }
 

@@ -22,6 +22,10 @@ android {
         }
     }
     productFlavors {
+        lars {
+            applicationId = "com.vogella.android.gradlebuildflavors.pasdf"
+
+        }
         prod {
             applicationId = "com.vogella.android.gradlebuildflavors.prod"
             versionName = "1.0-paid"
