@@ -1,4 +1,0 @@
-Use the "MainActivityTest.java" template from "template" folder to create a new RobotiumTest 
-
-Implement the testButtonClickShouldUpdateText test. Click on the button and search 
-for the "Current time" text with the solo class.
