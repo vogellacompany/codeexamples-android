@@ -1,10 +1,10 @@
 package com.vogella.android.test.juntexamples.hamcresttests;
 
 import com.vogella.android.test.juntexamples.DataService;
-import com.vogella.android.test.juntexamples.model.Race;
 import com.vogella.android.test.juntexamples.model.TolkienCharacter;
 
-import org.hamcrest.Condition;
+import org.hamcrest.FeatureMatcher;
+import org.hamcrest.Matcher;
 import org.junit.Test;
 
 import java.util.List;
@@ -12,10 +12,9 @@ import java.util.List;
 import static com.vogella.android.test.juntexamples.model.Race.HOBBIT;
 import static com.vogella.android.test.juntexamples.model.Race.ORC;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.not;
 
 
 /**
@@ -34,7 +33,6 @@ public class HamcrestTests {
         assertThat(frodo.getName(),is("Frodo"));
         assertThat(frodo.age,is(33));
         assertThat(frodo.getName(), is(not("Frodon")));
-
     }
 
     @Test
@@ -48,4 +46,18 @@ public class HamcrestTests {
         }
         assertThat(fellowship,not(anyOf()));
     }
+
+    @Test
+    public void fellowShipOfTheRingShouldContainer7() {
+        assertThat("Gandalf", length(is(8)));
+    }
+    public static  Matcher<String> length(Matcher<? super Integer> matcher) {
+        return new FeatureMatcher<String, Integer>(matcher, "a String of length that", "length") {
+            @Override
+            protected Integer featureValueOf(String actual) {
+                return actual.length();
+            }
+        };
+    }
+
 }
