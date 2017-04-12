@@ -12,9 +12,10 @@ import java.util.List;
 import static com.vogella.android.test.juntexamples.model.Race.HOBBIT;
 import static com.vogella.android.test.juntexamples.model.Race.ORC;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.anyOf;
+import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
+import static org.hamcrest.beans.HasPropertyWithValue.hasProperty;
 
 
 /**
@@ -40,11 +41,10 @@ public class HamcrestTests {
         List<TolkienCharacter> fellowship = new DataService().getFellowship();
         // ensure that not any of the fellows is a orc
 
-        for (TolkienCharacter t:
-                fellowship) {
+        for (TolkienCharacter t: fellowship) {
             assertThat(t.getRace(), not(is(ORC)));
         }
-        assertThat(fellowship,not(anyOf()));
+        assertThat(fellowship, everyItem(hasProperty("race",is(not(ORC))) ));
     }
 
     @Test

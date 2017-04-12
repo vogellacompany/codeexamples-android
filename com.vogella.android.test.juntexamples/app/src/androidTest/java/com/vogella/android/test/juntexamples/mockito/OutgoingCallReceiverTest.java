@@ -7,9 +7,13 @@ import android.support.test.runner.AndroidJUnit4;
 import com.vogella.android.test.juntexamples.OutgoingCallReceiver;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
@@ -29,7 +33,11 @@ public class OutgoingCallReceiverTest {
         mContext = mock(Context.class);
     }
 
+    @Rule
+    public MockitoRule rule = MockitoJUnit.rule();
 
+    @Captor
+    private ArgumentCaptor<Intent> captor;
 
     @Test
     public void activityShouldGetCorrectIntentData() {
@@ -41,10 +49,8 @@ public class OutgoingCallReceiverTest {
         assertNull(mReceiver.getResultData());
 
         // what did receiver do?
-        ArgumentCaptor<Intent> argument =
-                ArgumentCaptor.forClass(Intent.class);
-        verify(mContext, times(1)).startActivity(argument.capture());
-        Intent receivedIntent = argument.getValue();
+        verify(mContext, times(1)).startActivity(captor.capture());
+        Intent receivedIntent = captor.getValue();
         assertNull(receivedIntent.getAction());
         assertEquals("01234567890", receivedIntent.getStringExtra("phoneNum"));
         assertTrue((receivedIntent.getFlags() &

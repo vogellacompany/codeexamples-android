@@ -46,7 +46,6 @@ public class DataModelTests {
         DataService dataService = new DataService();
         TolkienCharacter tolkienCharacter = dataService.getFellowship().get(0);
         // checkthat tolkienCharacter.getClass is not a movie class
-
         assertTrue(!tolkienCharacter.getClass().equals(Movie.class) );
     }
 

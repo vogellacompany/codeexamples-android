@@ -14,6 +14,16 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    productFlavors {
+        prod {
+
+        }
+        mock {
+            applicationId "com.vogella.android.temperatureconverter.mock"
+        }
+
+    }
+
 }
 
 dependencies {
@@ -22,4 +32,8 @@ dependencies {
     androidTestCompile 'junit:junit:4.12'
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
     androidTestCompile 'com.android.support.test:runner:0.3'
+    compile 'org.mockito:mockito-core:2.7.22'
+    // required if you want to use Mockito for Android tests
+    testCompile 'org.mockito:mockito-android:2.7.22'
+    androidTestCompile 'org.mockito:mockito-android:2.7.22'
 }

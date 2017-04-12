@@ -34,7 +34,4 @@ public class ParameterizedTestFields {
         float actual = ConverterUtil.convertFahrenheitToCelsius(m1);
         assertEquals("Result", m2, actual, 0.001);
     }
-
-
-
 }

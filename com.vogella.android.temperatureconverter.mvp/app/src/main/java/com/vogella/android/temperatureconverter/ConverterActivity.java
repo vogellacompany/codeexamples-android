@@ -20,9 +20,7 @@ public class ConverterActivity extends Activity implements ConvertorContract.Vie
         text = (EditText) findViewById(R.id.inputValue);
         celsiusButton = (RadioButton) findViewById(R.id.radio0);
         fahrenheitButton = (RadioButton) findViewById(R.id.radio1);
-        presenter = new ConverterPresenter(this);
-
-
+        presenter = Injector.getConverterPresenter(this);
     }
 
     // this method is called at button click because we assigned the name to the

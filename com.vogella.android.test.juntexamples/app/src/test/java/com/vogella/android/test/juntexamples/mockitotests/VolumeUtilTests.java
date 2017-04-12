@@ -5,7 +5,6 @@ import android.media.AudioManager;
 import com.vogella.android.test.juntexamples.util.VolumeUtil;
 
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import static android.media.AudioManager.RINGER_MODE_NORMAL;
 import static android.media.AudioManager.RINGER_MODE_SILENT;
