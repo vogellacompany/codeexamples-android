@@ -12,10 +12,28 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        def GITHUB_REPO = "GITHUB_REPO"
+        def GITHUB_REPO_OWNER = "GITHUB_REPO_OWNER"
+        def GITHUB_USER = "GITHUB_USER"
+        def GITHUB_PW = "GITHUB_PW"
+        def github_repo_owner = project.hasProperty('GITHUB_REPO_OWNER') ? project.property('GITHUB_REPO_OWNER') : ""
+        def github_repo = project.hasProperty('GITHUB_REPO') ? project.property('GITHUB_REPO') : ""
+        def github_user = project.hasProperty('GITHUB_USER') ? project.property('GITHUB_USER') : ""
+        def github_password = project.hasProperty('GITHUB_PW') ? project.property('GITHUB_PW') : ""
+        debug {
+            buildConfigField "String", GITHUB_REPO_OWNER, "\"${github_repo_owner}\""
+            buildConfigField "String", GITHUB_REPO, "\"${github_repo}\""
+            buildConfigField "String", GITHUB_USER, "\"${github_user}\""
+            buildConfigField "String", GITHUB_PW, "\"${github_password}\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -30,5 +48,6 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+    compile "com.android.support:recyclerview-v7:25.1.1"
     testCompile 'junit:junit:4.12'
 }

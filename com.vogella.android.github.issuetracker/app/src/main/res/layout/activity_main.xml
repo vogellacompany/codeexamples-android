@@ -53,10 +53,10 @@
             android:maxLines="1" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/issues_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp" />
 </LinearLayout>

@@ -1,12 +1,11 @@
 package com.vogella.android.github.issuetracker;
 
-public class Issue {
+public class User {
     public int id;
-    public String title;
-    public User user;
+    public String login;
 
     @Override
     public String toString() {
-        return id + " - " + title;
+        return id + " - " + login;
     }
 }
