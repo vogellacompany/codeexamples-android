@@ -10,6 +10,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.EditText;
 
+import okhttp3.Credentials;
+
 public class CredentialsDialog extends DialogFragment {
 
     EditText usernameEditText;
@@ -41,7 +43,7 @@ public class CredentialsDialog extends DialogFragment {
                 .setView(view)
                 .setTitle("Credentials")
                 .setNegativeButton("Cancel", null)
-                .setPositiveButton("Store", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (listener != null) {

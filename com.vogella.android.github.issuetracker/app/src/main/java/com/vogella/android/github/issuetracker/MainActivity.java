@@ -1,12 +1,11 @@
 package com.vogella.android.github.issuetracker;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
     EditText repositoryEditText;
     TextView issuesTextView;
     private String password = "";
-    private String username= "";
+    private String username = "";
     private CommunicationController communicationController;
 
     @Override
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
         repositoryEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_DONE){
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     queryForIssues();
                     return true;
                 }
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
 
             @Override
             public void onError(Throwable e) {
-                Toast.makeText(MainActivity.this, "Cannot load issues.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         };
     }
@@ -104,8 +103,17 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
         issuesTextView.setText("");
         String owner = ownerEditText.getText().toString();
         String repository = repositoryEditText.getText().toString();
-        if(!username.isEmpty() && !password.isEmpty() && !owner.isEmpty() && !repository.isEmpty()) {
-            communicationController.loadIssues(username, password, getIssuesObserver(), owner, repository);
+        
+        if (username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(MainActivity.this, "Please provide your credentials", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        if (owner.isEmpty() || repository.isEmpty()) {
+            Toast.makeText(MainActivity.this, "Please provider repository owner and/or name", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        communicationController.loadIssues(username, password, getIssuesObserver(), owner, repository);
     }
 }
