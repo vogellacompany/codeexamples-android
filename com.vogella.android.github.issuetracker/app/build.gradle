@@ -35,8 +35,17 @@ android {
     dataBinding {
         enabled = true
     }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:2.0.1'
+    }
 }
 
+repositories{
+    maven{
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -48,6 +57,13 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
-    compile "com.android.support:recyclerview-v7:25.1.1"
-    testCompile 'junit:junit:4.12'
+    compile "com.android.support:recyclerview-v7:25.3.1"
+
+    compile 'com.google.dagger:dagger:HEAD-SNAPSHOT'
+    compile 'com.google.dagger:dagger-android:HEAD-SNAPSHOT'
+    compile 'com.google.dagger:dagger-android-support:HEAD-SNAPSHOT'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:HEAD-SNAPSHOT'
+    annotationProcessor 'com.google.dagger:dagger-compiler:HEAD-SNAPSHOT'
+
+    androidTestCompile 'junit:junit:4.12'
 }

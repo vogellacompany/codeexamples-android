@@ -2,6 +2,8 @@ package com.vogella.android.github.issuetracker;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
@@ -16,6 +18,7 @@ public class CommunicationController {
 
     private GithubApi githubApi;
 
+    @Inject
     public CommunicationController() {
         initGithubApi();
     }

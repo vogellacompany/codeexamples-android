@@ -16,6 +16,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjection;
 import io.reactivex.observers.DisposableSingleObserver;
 
 public class MainActivity extends AppCompatActivity implements CredentialsDialog.ICredentialsDialogListener {
@@ -26,11 +29,13 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
     ArrayList<Issue> issues;
     private String password = "";
     private String username = "";
-    private CommunicationController communicationController;
+    @Inject
+    CommunicationController communicationController;
     DisposableSingleObserver<List<Issue>> issuesObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -57,8 +62,6 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
         list.setLayoutManager(new LinearLayoutManager(this));
         issues = new ArrayList<>();
         list.setAdapter(new IssueAdapter(issues));
-
-        communicationController = new CommunicationController();
     }
 
     @Override
