@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
     private String username = "";
     private CommunicationController communicationController;
     DisposableSingleObserver<List<Issue>> issuesObserver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
 
         ownerEditText = (EditText) findViewById(R.id.owner_edittext);
         repositoryEditText = (EditText) findViewById(R.id.repository_edittext);
-        if (BuildConfig.DEBUG){
+        if (BuildConfig.DEBUG) {
             ownerEditText.setText(BuildConfig.GITHUB_REPO_OWNER);
             repositoryEditText.setText(BuildConfig.GITHUB_REPO);
         }
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
     private void showCredentialsDialog() {
         CredentialsDialog dialog = new CredentialsDialog();
         Bundle arguments = new Bundle();
-        if (BuildConfig.DEBUG && BuildConfig.GITHUB_USER.length() > 0){
+        if (BuildConfig.DEBUG && BuildConfig.GITHUB_USER.length() > 0) {
             username = BuildConfig.GITHUB_USER;
             password = BuildConfig.GITHUB_PW;
         }
@@ -123,24 +124,18 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(MainActivity.this, "Please provide your credentials", Toast.LENGTH_SHORT).show();
             return;
-        if(!username.isEmpty() && !password.isEmpty() && !owner.isEmpty() && !repository.isEmpty()) {
+        }
+        if (!username.isEmpty() && !password.isEmpty() && !owner.isEmpty() && !repository.isEmpty()) {
             issuesObserver = getIssuesObserver();
-            communicationController.loadIssues(username, password, issuesObserver , owner, repository);
+            communicationController.loadIssues(username, password, issuesObserver, owner, repository);
         }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if (issuesObserver!=null && !issuesObserver.isDisposed()) {
+        if (issuesObserver != null && !issuesObserver.isDisposed()) {
             issuesObserver.dispose();
         }
-
-        if (owner.isEmpty() || repository.isEmpty()) {
-            Toast.makeText(MainActivity.this, "Please provider repository owner and/or name", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        communicationController.loadIssues(username, password, getIssuesObserver(), owner, repository);
     }
 }
