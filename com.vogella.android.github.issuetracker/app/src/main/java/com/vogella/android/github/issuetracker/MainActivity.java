@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity implements CredentialsDialog
     private DisposableSingleObserver<List<Issue>> getIssuesObserver() {
         return new DisposableSingleObserver<List<Issue>>() {
             @Override
-            public void onSuccess(List<Issue> value) {
-                for (Issue issues : value) {
-                    issuesTextView.append(issues.toString() + "\n");
+            public void onSuccess(List<Issue> issues) {
+                for (Issue issue : issues) {
+                    issuesTextView.append(issue.toString() + "\n");
                 }
             }
 
