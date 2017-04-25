@@ -6,7 +6,6 @@ public interface ConvertorContract {
         void updateResultValue(float result);
         void enableCelsiusSelection(boolean celsiusSelection);
         void showError();
-
     }
 
     interface Presenter {

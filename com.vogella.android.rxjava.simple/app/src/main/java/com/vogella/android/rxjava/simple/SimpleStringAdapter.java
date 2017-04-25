@@ -37,7 +37,7 @@ public class SimpleStringAdapter extends RecyclerView.Adapter<SimpleStringAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.mColorDisplay.setText(mStrings.get(position));
+        holder.colorTextView.setText(mStrings.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,11 +53,11 @@ public class SimpleStringAdapter extends RecyclerView.Adapter<SimpleStringAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public final TextView mColorDisplay;
+        public final TextView colorTextView;
 
         public ViewHolder(View view) {
             super(view);
-            mColorDisplay = (TextView) view.findViewById(R.id.color_display);
+            colorTextView = (TextView) view.findViewById(R.id.color_display);
         }
     }
 }

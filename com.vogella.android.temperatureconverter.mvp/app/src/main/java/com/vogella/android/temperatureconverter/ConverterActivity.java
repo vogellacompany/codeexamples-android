@@ -23,6 +23,11 @@ public class ConverterActivity extends Activity implements ConvertorContract.Vie
         presenter = Injector.getConverterPresenter(this);
     }
 
+    public void setPresenter() {
+
+    }
+
+
     // this method is called at button click because we assigned the name to the
     // "OnClick" property of the button
     public void onClick(View view) {
@@ -42,6 +47,23 @@ public class ConverterActivity extends Activity implements ConvertorContract.Vie
                 }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void updateResultValue(float result) {

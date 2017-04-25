@@ -1,6 +1,7 @@
 package com.vogella.android.rxjava.simple;
 
 import android.content.Context;
+import android.os.SystemClock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,42 +17,30 @@ public class RestClient {
     }
 
     public List<String> getFavoriteTvShows() {
-        try {
-            // "Simulate" the delay of network.
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return createTvShowList();
+        SystemClock.sleep(5000);// "Simulate" the delay of network.
+        return createBooks();
     }
 
     public List<String> getFavoriteTvShowsWithException() {
-        try {
-            // "Simulate" the delay of network.
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        SystemClock.sleep(5000);// "Simulate" the delay of network.
         throw new RuntimeException("Failed to load");
     }
 
-    private List<String> createTvShowList() {
-        List<String> tvShows = new ArrayList<>();
-        tvShows.add("The Joy of Painting");
-        tvShows.add("The Simpsons");
-        tvShows.add("Futurama");
-        tvShows.add("Rick & Morty");
-        tvShows.add("The X-Files");
-        tvShows.add("Star Trek: The Next Generation");
-        tvShows.add("Archer");
-        tvShows.add("30 Rock");
-        tvShows.add("Bob's Burgers");
-        tvShows.add("Breaking Bad");
-        tvShows.add("Parks and Recreation");
-        tvShows.add("House of Cards");
-        tvShows.add("Game of Thrones");
-        tvShows.add("Law And Order");
-        return tvShows;
+    private List<String> createBooks() {
+        List<String> books = new ArrayList<>();
+        books.add("Lord of the Rings");
+        books.add("The dark elf");
+        books.add("Eclipse Introduction");
+        books.add("Histor book");
+        books.add("Der kleine Prinz");
+        books.add("7 habits of highly effective people");
+        books.add("Other book 1");
+        books.add("Other book 2");
+        books.add("Other book 3");
+        books.add("Other book 4");
+        books.add("Other book 5");
+        books.add("Other book 6");
+        return books;
     }
 
     public List<String> searchForCity(String searchString) {

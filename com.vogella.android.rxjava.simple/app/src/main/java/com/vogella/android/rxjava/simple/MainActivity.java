@@ -8,13 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import rx.Observable;
-import rx.Observer;
+import io.reactivex.Observable;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView mColorListView;
-    SimpleStringAdapter mSimpleStringAdapter;
+    RecyclerView colorListView;
+    SimpleStringAdapter simpleStringAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,32 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private void createObservable() {
         Observable<List<String>> listObservable = Observable.just(getColorList());
 
-        listObservable.subscribe(new Observer<List<String>>() {
-
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(List<String> colors) {
-                mSimpleStringAdapter.setStrings(colors);
-            }
-        });
+        listObservable.subscribe(colors -> simpleStringAdapter.setStrings(colors));
 
     }
 
     private void configureLayout() {
         setContentView(R.layout.activity_main);
-        mColorListView = (RecyclerView) findViewById(R.id.color_list);
-        mColorListView.setLayoutManager(new LinearLayoutManager(this));
-        mSimpleStringAdapter = new SimpleStringAdapter(this);
-        mColorListView.setAdapter(mSimpleStringAdapter);
+        colorListView = (RecyclerView) findViewById(R.id.color_list);
+        colorListView.setLayoutManager(new LinearLayoutManager(this));
+        simpleStringAdapter = new SimpleStringAdapter(this);
+        colorListView.setAdapter(simpleStringAdapter);
     }
 
     private static List<String> getColorList() {

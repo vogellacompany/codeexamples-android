@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "294853682825",
+    "firebase_url": "https://vogellachat.firebaseio.com",
+    "project_id": "vogellachat",
+    "storage_bucket": "vogellachat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294853682825:android:36a7cdd827e5c76b",
+        "android_client_info": {
+          "package_name": "com.vogella.android.firebaseexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294853682825-5sgr981htk5m91h85nc9149raap0gpa5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vogella.android.firebaseexample",
+            "certificate_hash": "2a4997cf5358e9f9d025b79e2c9f11efd7644f20"
+          }
+        },
+        {
+          "client_id": "294853682825-9i5fb3obf5tn17f1hs6k8l6sh5tef6p5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXjVka690dA5I8UQETeLz12JvviW6ll4A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294853682825-9i5fb3obf5tn17f1hs6k8l6sh5tef6p5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
