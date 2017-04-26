@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
     >
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/color_list"
+
+    <Button
+        android:id="@+id/first"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="First"
         />
-</FrameLayout>
+
+    <Button
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Second"
+
+        />
+
+    <Button
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Third"
+
+        />
+</LinearLayout>

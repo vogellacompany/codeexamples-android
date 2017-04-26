@@ -13,7 +13,7 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/tv_show_list"
+        android:id="@+id/books_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

@@ -32,14 +32,14 @@ public class OkhttpTestWithRxJava {
     @Test
     @Ignore
     public void useOkHttp() {
-        Observable<String> observer = Observable.fromCallable(() -> {
+        Observable<String> observable = Observable.fromCallable(() -> {
             Response response = client.newCall(request).execute();
             if (!response.isSuccessful()) {
                 throw new RuntimeException("Call not successful");
             }
             return response.body().toString();
         });
-        observer.subscribe(new DisposableObserver<String>() {
+        observable.subscribe(new DisposableObserver<String>() {
 
             @Override
             public void onNext(String s) {
@@ -57,7 +57,8 @@ public class OkhttpTestWithRxJava {
             }
         });
 
-        observer.blockingFirst();
+        String s = observable.blockingFirst();
+        // TODO so some validation of the result
     }
 
 
@@ -89,7 +90,6 @@ public class OkhttpTestWithRxJava {
 
             @Override
             public void onError(Throwable e) {
-
             }
 
             @Override

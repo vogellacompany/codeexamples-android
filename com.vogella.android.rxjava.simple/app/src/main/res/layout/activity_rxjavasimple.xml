@@ -9,7 +9,14 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Server"
+        />
+    <Button
+        android:id="@+id/toastbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        android:onClick="onClick"
         />
 
     <TextView

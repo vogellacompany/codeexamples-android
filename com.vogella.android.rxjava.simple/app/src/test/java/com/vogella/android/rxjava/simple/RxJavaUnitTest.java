@@ -7,6 +7,7 @@ import java.util.List;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.observers.TestObserver;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -29,6 +30,9 @@ public class RxJavaUnitTest {
             public void subscribe(ObservableEmitter<Todo> emitter) throws Exception {
                 try {
                     List<Todo> todos = RxJavaUnitTest.this.getTodos();
+                    if (todos!=null){
+                        throw new NullPointerException("todos was null");
+                    }
                     for (Todo todo : todos) {
                         emitter.onNext(todo);
                     }
@@ -38,10 +42,16 @@ public class RxJavaUnitTest {
                 }
             }
         });
+        TestObserver<Object> testObserver = new TestObserver<>();
+        todoObservable.subscribeWith(testObserver);
+        testObserver.assertError(NullPointerException.class);
+
     }
 
     private List<Todo> getTodos() {
         return null;
     }
 
+    public class Todo {
+    }
 }

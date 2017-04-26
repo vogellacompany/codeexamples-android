@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This is a mock REST Client. It simulates making blocking calls to an REST endpoint.
+ * This is a fake REST client.
+ *
+ * It simulates making blocking calls to an REST endpoint.
  */
 public class RestClient {
     private Context mContext;
@@ -16,13 +18,13 @@ public class RestClient {
         mContext = context;
     }
 
-    public List<String> getFavoriteTvShows() {
-        SystemClock.sleep(5000);// "Simulate" the delay of network.
+    public List<String> getFavoriteBooks() {
+        SystemClock.sleep(8000);// "Simulate" the delay of network.
         return createBooks();
     }
 
-    public List<String> getFavoriteTvShowsWithException() {
-        SystemClock.sleep(5000);// "Simulate" the delay of network.
+    public List<String> getFavoriteBooksWithException() {
+        SystemClock.sleep(8000);// "Simulate" the delay of network.
         throw new RuntimeException("Failed to load");
     }
 
@@ -31,7 +33,7 @@ public class RestClient {
         books.add("Lord of the Rings");
         books.add("The dark elf");
         books.add("Eclipse Introduction");
-        books.add("Histor book");
+        books.add("History book");
         books.add("Der kleine Prinz");
         books.add("7 habits of highly effective people");
         books.add("Other book 1");
@@ -41,30 +43,5 @@ public class RestClient {
         books.add("Other book 5");
         books.add("Other book 6");
         return books;
-    }
-
-    public List<String> searchForCity(String searchString) {
-        try {
-            // "Simulate" the delay of network.
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return getMatchingCities(searchString);
-    }
-
-    private List<String> getMatchingCities(String searchString) {
-        if (searchString.isEmpty()) {
-            return new ArrayList<>();
-        }
-
-        String[] cities = mContext.getResources().getStringArray(R.array.city_list);
-        List<String> toReturn = new ArrayList<>();
-        for (String city : cities) {
-            if (city.toLowerCase().startsWith(searchString.toLowerCase())) {
-                toReturn.add(city);
-            }
-        }
-        return toReturn;
     }
 }

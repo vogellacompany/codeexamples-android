@@ -32,9 +32,9 @@ public class BooksActivity extends AppCompatActivity {
     }
 
     private void createObservable() {
-        Observable<List<String>> tvShowObservable =
-                Observable.fromCallable(() -> restClient.getFavoriteTvShows());
-        bookSubscription = tvShowObservable.
+        Observable<List<String>> booksObservable =
+                Observable.fromCallable(() -> restClient.getFavoriteBooks());
+        bookSubscription = booksObservable.
                 subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).
                 subscribe(strings -> displayBooks(strings));
@@ -48,16 +48,16 @@ public class BooksActivity extends AppCompatActivity {
         }
     }
 
-    private void displayBooks(List<String> tvShows) {
-        stringAdapter.setStrings(tvShows);
+    private void displayBooks(List<String> books) {
+        stringAdapter.setStrings(books);
         progressBar.setVisibility(View.GONE);
         booksRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void configureLayout() {
-        setContentView(R.layout.activity_example2);
+        setContentView(R.layout.activity_books);
         progressBar = (ProgressBar) findViewById(R.id.loader);
-        booksRecyclerView = (RecyclerView) findViewById(R.id.tv_show_list);
+        booksRecyclerView = (RecyclerView) findViewById(R.id.books_list);
         booksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         stringAdapter = new SimpleStringAdapter(this);
         booksRecyclerView.setAdapter(stringAdapter);
