@@ -4,7 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 @Module
-public abstract class ActivityModule {
-    @ContributesAndroidInjector
+public abstract class ApplicationModule {
+    @ContributesAndroidInjector(modules = GithubApiModule.class)
     abstract MainActivity contributeMainActivity();
 }

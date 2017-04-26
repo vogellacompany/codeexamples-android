@@ -2,6 +2,7 @@ package com.vogella.android.github.issuetracker;
 
 import java.util.List;
 
+import dagger.Provides;
 import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
