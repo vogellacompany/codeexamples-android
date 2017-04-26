@@ -33,14 +33,14 @@ public class RxJavaSimpleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rxjavasimple);
         View view = findViewById(R.id.button);
-        view.setOnClickListener(view1 -> {
-            view1.setEnabled(false); // disables the button until execution has finished
+        view.setOnClickListener(v -> {
+            v.setEnabled(false); // disables the button until execution has finished
             Disposable subscribe = serverDownloadObservable.
                     observeOn(AndroidSchedulers.mainThread()).
                     subscribeOn(Schedulers.io()).
                     subscribe(integer -> {
                         updateTheUserInterface(integer); // this methods updates the ui
-                        view1.setEnabled(true); // enables it again
+                        v.setEnabled(true); // enables it again
                     });
             disposable.add(subscribe);
         });
