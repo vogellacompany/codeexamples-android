@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
 public class LocalWordService extends Service {
     private final IBinder mBinder = new MyBinder();
 	private List<String> resultList = new ArrayList<String>();
 	private int counter = 1;
+
+	//assume we start this service with activity.bindService
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {

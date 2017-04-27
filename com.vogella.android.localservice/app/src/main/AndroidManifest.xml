@@ -21,7 +21,7 @@
             android:label="Word service" >
         </service>
         <service
-            android:name=".ScheduleWordUpdateJobService"
+            android:name=".TestJobService"
             android:label="Word service"
             android:permission="android.permission.BIND_JOB_SERVICE" >
 

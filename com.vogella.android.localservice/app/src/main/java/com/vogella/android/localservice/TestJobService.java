@@ -8,8 +8,7 @@ import android.content.Intent;
  * JobService to be scheduled by the JobScheduler.
  * start another service
  */
-public class ScheduleWordUpdateJobService extends JobService {
-	private static final String TAG = "SyncService";
+public class TestJobService extends JobService {
 
 	@Override
 	public boolean onStartJob(JobParameters params) {

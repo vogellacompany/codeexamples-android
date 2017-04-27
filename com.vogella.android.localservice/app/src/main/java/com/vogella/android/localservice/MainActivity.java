@@ -63,6 +63,11 @@ public class MainActivity extends ListActivity implements ServiceConnection {
         }
     }
 
+
+    // two options
+    // startService()
+    // bindService()
+
     @Override
     public void onServiceConnected(ComponentName name, IBinder binder) {
         LocalWordService.MyBinder b = (LocalWordService.MyBinder) binder;
