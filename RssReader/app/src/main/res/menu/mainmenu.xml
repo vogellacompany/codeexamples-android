@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:title="Refresh"
+          android:icon="@drawable/ic_refresh"
+          android:id="@+id/action_refresh"
+          android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:showAsAction="never"
+        >
+    </item>
+    <item
+        android:id="@+id/action_network"
+        android:title="Network Setting"
+        android:showAsAction="never"
+        >
+    </item>
+</menu>
