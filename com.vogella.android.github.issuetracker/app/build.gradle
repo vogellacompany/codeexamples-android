@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.vogella.android.github.issuetracker"
         minSdkVersion 15
@@ -41,11 +41,6 @@ android {
     }
 }
 
-repositories{
-    maven{
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
-}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -59,11 +54,11 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
     compile "com.android.support:recyclerview-v7:25.3.1"
 
-    compile 'com.google.dagger:dagger:HEAD-SNAPSHOT'
-    compile 'com.google.dagger:dagger-android:HEAD-SNAPSHOT'
-    compile 'com.google.dagger:dagger-android-support:HEAD-SNAPSHOT'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:HEAD-SNAPSHOT'
-    annotationProcessor 'com.google.dagger:dagger-compiler:HEAD-SNAPSHOT'
+    compile 'com.google.dagger:dagger:2.11'
+    compile 'com.google.dagger:dagger-android:2.11'
+    compile 'com.google.dagger:dagger-android-support:2.11'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
 
     androidTestCompile 'junit:junit:4.12'
 }
