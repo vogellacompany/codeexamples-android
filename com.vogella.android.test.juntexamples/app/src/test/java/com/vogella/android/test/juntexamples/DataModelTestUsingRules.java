@@ -20,10 +20,10 @@ public class DataModelTestUsingRules {
         rule.expect(IllegalArgumentException.class);
         rule.expectMessage("Age is not allowed to be smaller than zero");
         TolkienCharacter frodo = new TolkienCharacter("Frodo", 33, HOBBIT);
-        frodo.setAge(-1);
+//        frodo.setAge(-1);
 
-        rule.expect(IllegalArgumentException.class);
-        rule.expectMessage("Hello");
+//        rule.expect(IllegalArgumentException.class);
+//        rule.expectMessage("Hello");
         // another test with exmaple
 
     }

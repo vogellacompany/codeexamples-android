@@ -8,27 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyViewModel extends ViewModel {
-    private MutableLiveData<List<User>> users;
+    private MutableLiveData<List<Task>> tasks;
 
-    public LiveData<List<User>> getUsers() {
-        if (users == null) {
-            users = new MutableLiveData<List<User>>();
-            loadUsers();
+    public LiveData<List<Task>> getTasks() {
+        if (tasks == null) {
+            tasks = new MutableLiveData<List<Task>>();
+            loadTasks();
         }
-        return users;
+        return tasks;
     }
 
-    private void loadUsers() {
+    private void loadTasks() {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        List<User> list = new ArrayList<>();
-        User user = new User();
-        user.name = "Testing";
-        list.add(user);
-        users.setValue(list);
+        List<Task> list = new ArrayList<>();
+        Task task = Task.builder().setId(1).setSummary("Testing ViewModel").build();
+        list.add(task);
+        tasks.setValue(list);
         // do async operation to fetch users
     }
 }

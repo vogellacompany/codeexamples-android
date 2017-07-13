@@ -50,5 +50,4 @@ public class VolumeUtilTests {
         verifyNoMoreInteractions(audioManager);
     }
 
-
 }

@@ -4,8 +4,6 @@ import android.content.pm.PackageInfo;
 import android.test.ApplicationTestCase;
 import android.test.MoreAsserts;
 
-import org.junit.Test;
-
 /**
  * Created by vogella on 19.06.16.
  */
