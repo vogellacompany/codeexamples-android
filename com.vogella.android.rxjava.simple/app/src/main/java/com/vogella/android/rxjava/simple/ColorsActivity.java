@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.disposables.Disposable;
 
 
 public class ColorsActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class ColorsActivity extends AppCompatActivity {
 
     private void createObservable() {
         Observable<List<String>> listObservable = Observable.just(getColorList());
-        listObservable.subscribe(colors -> simpleStringAdapter.setStrings(colors));
+        Disposable subscribe = listObservable.subscribe(colors -> simpleStringAdapter.setStrings(colors));
 
     }
 
