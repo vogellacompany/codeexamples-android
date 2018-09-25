@@ -46,6 +46,12 @@ public class MyListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        RssApplication.bus.unregister(this);
+        super.onDestroyView();
+    }
+
     public interface OnItemSelectedListener {
         void onRssItemSelected(String link);
     }
