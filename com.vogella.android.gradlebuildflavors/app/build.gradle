@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '27.0.3'
 
     lintOptions {
         abortOnError false
@@ -21,26 +21,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "version"
     productFlavors {
-        lars {
-            applicationId = "com.vogella.android.gradlebuildflavors.pasdf"
-
-        }
         prod {
+            dimension "version"
             applicationId = "com.vogella.android.gradlebuildflavors.prod"
             versionName = "1.0-paid"
         }
 
         mock {
+            dimension "version"
             applicationId = "com.vogella.android.gradlebuildflavors.mock"
             versionName = "1.0-free"
         }
+
     }
 
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.jakewharton:butterknife:5.1.1'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
