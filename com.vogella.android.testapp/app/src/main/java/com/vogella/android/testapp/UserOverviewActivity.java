@@ -5,26 +5,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class UserOverviewActivity extends AppCompatActivity {
 
     public static final int SUB_ACTIVITY_CREATE_USER = 10;
     public static final int SUB_ACTIVITY_LEARN = 20;
     private User user;
-
+    TextView userNameTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_overview);
-
+        userNameTextView = findViewById(R.id.username);
         // TODO check persistence if user exists and load the existing one
-        boolean userExists=false;
+        boolean userExists = false;
         // if no user found, create a new one
         if (!userExists){
 
             Intent intent = new Intent(this, CreateUserActivity.class);
             startActivityForResult(intent, SUB_ACTIVITY_CREATE_USER);
         }
+
     }
 
 
@@ -51,7 +53,8 @@ public class UserOverviewActivity extends AppCompatActivity {
     }
 
     private void updateUserInterface() {
-        // TODO show the new user values in the UI
+        userNameTextView.setText(user.name);
+        // TODO update more fields
     }
 
 
