@@ -1,0 +1,45 @@
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/userlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="User name"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/userlabel"
+        android:layout_below="@+id/userlabel"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="the name"
+        android:textSize="36sp"
+        />
+
+
+    <TextView
+        android:id="@+id/button_learn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/username"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="45dp"
+        android:onClick="onClick"
+        android:text="Practice"
+        android:textSize="60dp"
+        />
+
+</RelativeLayout>
+

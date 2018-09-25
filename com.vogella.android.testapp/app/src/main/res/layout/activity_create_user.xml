@@ -1,0 +1,70 @@
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/userlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="User"
+        android:labelFor="@id/username"
+        android:textSize="24sp"
+        />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/userlabel"
+        android:layout_below="@+id/userlabel"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textSize="36sp"
+        />
+
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_below="@id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/female"
+            android:button="@drawable/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/male"
+            android:button="@drawable/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+
+            android:text="Male" >
+        </RadioButton>
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/createUserButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:layout_below="@+id/gender"
+        android:text="Create"
+        android:onClick="onClick"
+        />
+
+</RelativeLayout>
+
