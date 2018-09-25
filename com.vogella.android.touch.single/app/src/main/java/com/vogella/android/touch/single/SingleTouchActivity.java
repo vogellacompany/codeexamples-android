@@ -97,7 +97,7 @@ public class SingleTouchActivity extends Activity  {
 
     public void setColor(int r, int g, int b) {
         TouchEventView drawingView = (TouchEventView) findViewById(R.id.drawingview);
-        drawingView.setColor(r, g, b);
+//        drawingView.setColor(r, g, b);
     }
 
 

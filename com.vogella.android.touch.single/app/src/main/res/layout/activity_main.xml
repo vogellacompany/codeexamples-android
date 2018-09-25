@@ -6,7 +6,6 @@
 
     <com.vogella.android.touch.single.TouchEventView
         android:layout_width="match_parent"
-        android:background="@drawable/dwarf"
         android:layout_height="match_parent"
         android:id="@+id/drawingview">
     </com.vogella.android.touch.single.TouchEventView>
