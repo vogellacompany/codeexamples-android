@@ -1,11 +1,10 @@
-android-examples
+ANDROID-EXAMPLES 
 ================
 
 Welcome to the source code for Android examples from the vogella.com online tutorials and books.
 
 All of the source code in this archive is licensed under the EPL license except as noted.
-
-Using in Android Studio
+USING IN ANDROID STUDIOS 
 =======================
 
 Some of the projects should have a `build.gradle` file suitable for
@@ -18,7 +17,7 @@ download. Similarly, you may need to adjust the `buildToolsVersion`
 value to refer to a version of the "Build-tools" that you have downloaded
 from the SDK Manager.
 
-Using in Eclipse
+USING IN ECLIPSE
 ================
 
 Most of the projects can be imported using the normal Eclipse import process. 
