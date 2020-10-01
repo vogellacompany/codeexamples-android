@@ -1,7 +1,7 @@
 android-examples
 ================
 
-Welcome to the source code for Android examples from the vogella.com online tutorials and books.
+ Here we Welcome  you to the source code for Android examples from the vogella.com online tutorials and books.
 
 All of the source code in this archive is licensed under the EPL license except as noted.
 
