@@ -1,4 +1,4 @@
-android-examples
+-- android-examples --
 ================
 
 Welcome to the source code for Android examples from the vogella.com online tutorials and books.
